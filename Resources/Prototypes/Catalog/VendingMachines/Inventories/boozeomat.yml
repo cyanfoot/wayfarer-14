@@ -54,6 +54,7 @@
     DrinkCoffeeJug: 1 # Frontier
     JugCaramexinin: 1 # Frontier
     DrinkTeaJug: 1 # Frontier
+    DrinkAngobittersBottleFull: 3 # DeltaV - Angostura Bitters Bottle
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1
