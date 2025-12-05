@@ -49,6 +49,7 @@
         volume: -5
   # Wayfarer End
   - type: CleanupImmune # Wayfarer
+  - type: FishingPoints # DeltaV
 
 #IDs with layers
 
