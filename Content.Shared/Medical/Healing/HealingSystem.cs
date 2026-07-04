@@ -171,7 +171,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
     {
         if (args.Handled)
             return;
-        if (TryHeal(healing, args.User, args.User, args.User)) //Wayfarer - 4th argument
+        if (TryHeal(healing, args.User, args.User, args.User)) //Wayfarer - 4th argument, to surpport surgery tools detecting buckled.
             args.Handled = true;
     }
 
@@ -180,7 +180,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
         if (args.Handled || !args.CanReach || args.Target == null)
             return;
 
-        if (TryHeal(healing, args.Target.Value, args.User, args.Target.Value))
+        if (TryHeal(healing, args.Target.Value, args.User, args.Target.Value)) //Wayfarer - 4th argument, to surpport surgery tools detecting buckled.
             args.Handled = true;
     }
 
@@ -230,35 +230,12 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             ? healing.Comp.Delay
             : healing.Comp.Delay * GetScaledHealingPenalty(target, healing.Comp.SelfHealPenaltyMultiplier);
 
-        //Wayfarer - Surgical Devices delay is affected by if a patient's bed and concicousness, and the doctors clothes being sterile
+        //Wayfarer - Surgical Devices delay is affected by whether the patient is on a bed, and the doctors clothes being sterile
         if (_tag.HasTag(healing, SurgeryToolsTag))
         {
 
             var surgerySpeedModifier = 1 - (GetSurgicalEnvironmentBonus(target, healing, user, targetBuckle) / 10);
             delay = delay * surgerySpeedModifier;
-        }
-        else
-        {
-            //Wearing nitrile gloves reduces the delay of non-surgical device topicals.
-            if (_inventorySystem.TryGetSlotEntity(user, "gloves", out var gloves))
-            {
-                var userGlovesID = MetaData(gloves.Value).EntityPrototype?.ID;
-                if (userGlovesID == "ClothingHandsGlovesNitrile" || userGlovesID == "ClothingHandsGlovesLatex")
-                {
-                    delay *= 0.75f;
-                }
-            }
-            if (_inventorySystem.TryGetSlotEntity(user, "mask", out var mask))
-            {
-                var userMaskID = MetaData(mask.Value).EntityPrototype?.ID;
-                if (userMaskID == "ClothingMaskSterile" || userMaskID == "ClothingMaskBreathMedical" || userMaskID == "ClothingMaskBreathMedicalSecurity")
-                {
-                    delay *= 0.75f;
-                }
-            }
-
-
-
         }
         //end wayfarer
 
@@ -299,14 +276,14 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
 
     public float GetSurgicalEnvironmentBonus(Entity<DamageableComponent?> target, Entity<HealingComponent> healing, EntityUid user, EntityUid? targetBuckle) //Wayfarer
     {
-        //generates a score, used for both reducing infection damage from surgeries, and increasing their speed.
-        var surgicalEnvironmentPoints = 0;
+        //generates a score, used for increasing the speed of surgery
+        var surgicalEnvironmentPoints = 0.0;
         //Medical gloves
         if (_inventorySystem.TryGetSlotEntity(user, "gloves", out var gloves))
         {
             surgicalEnvironmentPoints += 1; //any gloves are good - but sterile ones are better.
             var userGlovesID = MetaData(gloves.Value).EntityPrototype?.ID;
-            if (userGlovesID == "ClothingHandsGlovesNitrile" || userGlovesID == "ClothingHandsGlovesLatex")
+            if (userGlovesID == "ClothingHandsGlovesNitrile" || userGlovesID == "ClothingHandsGlovesLatex") //Id references instead of adding a new tag is used, to make it easier to strip out this system.
             {
                 surgicalEnvironmentPoints += 1;
             }
@@ -327,7 +304,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             var userJumpsuitID = MetaData(jumpsuit.Value).EntityPrototype?.ID;
             if (userJumpsuitID == "UniformScrubsColorGreen" || userJumpsuitID == "UniformScrubsColorBlue" || userJumpsuitID == "UniformScrubsColorPurple")
             {
-                surgicalEnvironmentPoints += 1;
+                surgicalEnvironmentPoints += 0.5;
             }
         }
         //cap
@@ -336,7 +313,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             var userHeadID = MetaData(head.Value).EntityPrototype?.ID;
             if (userHeadID == "ClothingHeadHatSurgcapGreen" || userHeadID == "ClothingHeadHatSurgcapBlue" || userHeadID == "ClothingHeadHatSurgcapPurple")
             {
-                surgicalEnvironmentPoints += 1;
+                surgicalEnvironmentPoints += 0.5;
             }
         }
         //bed
@@ -345,22 +322,20 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             _popupSystem.PopupClient("1", target, user);
             if (buckleComp.Buckled)
             {
+                surgicalEnvironmentPoints += 1; //any bed (or chair) is good - but surgical beds are better.
                 _popupSystem.PopupClient("2", target, user);
                 if (buckleComp.BuckledTo != null)
                 {
-                    var buckdebug = buckleComp.BuckledTo.Value;
-                    _popupSystem.PopupClient("buckle:" + buckdebug.ToString(), target, user);
                     var bedID = MetaData(buckleComp.BuckledTo.Value).EntityPrototype?.ID;
                     if (bedID == "StasisBed" || bedID == "OperatingTable")
                     {
-                        surgicalEnvironmentPoints += 5;
+                        surgicalEnvironmentPoints += 2;
                     }
                 }
             }
         }
-        _popupSystem.PopupClient(".                                 points:" + surgicalEnvironmentPoints.ToString(), target, user);
 
-        return (float)Math.Min(surgicalEnvironmentPoints, 9);
+        return (float)Math.Min(surgicalEnvironmentPoints, 8); //cap it at 8 points, so that surgery cant become instant.
     }
 
 
