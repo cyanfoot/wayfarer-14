@@ -319,11 +319,9 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
         //bed
         if (targetBuckle.HasValue && TryComp<BuckleComponent>(targetBuckle.Value, out var buckleComp))
         {
-            _popupSystem.PopupClient("1", target, user);
             if (buckleComp.Buckled)
             {
                 surgicalEnvironmentPoints += 1; //any bed (or chair) is good - but surgical beds are better.
-                _popupSystem.PopupClient("2", target, user);
                 if (buckleComp.BuckledTo != null)
                 {
                     var bedID = MetaData(buckleComp.BuckledTo.Value).EntityPrototype?.ID;

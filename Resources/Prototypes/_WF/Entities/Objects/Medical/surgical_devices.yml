@@ -1,7 +1,7 @@
 
 - type: entity
   name: major trauma surgery kit
-  description: A set of surgical tools for regenerating major brute injuries, causing cellular damage
+  description: A set of surgical tools for regenerating major brute injuries.
   parent: BaseHealingItem
   id: BruteSurgeryKit
   components:
@@ -41,7 +41,7 @@
 
 - type: entity
   name: skin graft surgery kit
-  description: A set of surgical tools for replacing large patches of burnt flesh, causing slashing damage
+  description: A set of surgical tools for replacing large patches of burnt flesh.
   parent: BaseHealingItem
   id: BurnSurgeryKit
   components:
@@ -65,7 +65,7 @@
         Burn: -400 # 100 for each type in the group
       types:
         Cellular: 5 #annoying 'scar' damage that will need chemical treatment - but small enough to be ignored short term.
-        Poison: 10 #easy to treat, encourages moving to medbed for recovery.
+        Slash: 10 #easy to treat, encourages moving to medbed for recovery.
     delay: 20 # Surgery takes time
     selfHealPenaltyMultiplier: 3
     healingBeginSound:
@@ -81,7 +81,7 @@
 
 - type: entity
   name: toxin cleansing surgery kit
-  description: A set of surgical tools for purging the body of toxins, causing cellular damage
+  description: A set of surgical tools for purging the body of toxins.
   parent: BaseHealingItem
   id: ToxinSurgeryKit
   components:
