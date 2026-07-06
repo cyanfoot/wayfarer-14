@@ -42,33 +42,6 @@
   id: Hemostat
   result: Hemostat
 
-- type: latheRecipe # Wayfarer
-  parent: BaseSurgicalRecipe
-  id: BruteSurgeryKit
-  result: BruteSurgeryKit
-  completetime: 2
-  materials:
-    Steel: 200
-    Plastic: 100
-
-- type: latheRecipe
-  parent: BaseSurgicalRecipe
-  id: BurnSurgeryKit
-  result: BurnSurgeryKit
-  completetime: 2
-  materials:
-    Steel: 200
-    Plastic: 100
-
-- type: latheRecipe
-  parent: BaseSurgicalRecipe
-  id: ToxinSurgeryKit
-  result: ToxinSurgeryKit
-  completetime: 2
-  materials:
-    Steel: 200
-    Plastic: 100 #end of Wayfarer
-
 - type: latheRecipe
   id: BodyBag
   result: BodyBagFolded
