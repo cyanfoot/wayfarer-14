@@ -15,12 +15,12 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes; //Wayfarer
-using Content.Shared.Tag;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
-using Content.Shared.Inventory; //Wayfarer
-using Content.Shared.Buckle;//Wayfarer
-using Content.Shared.Buckle.Components;//Wayfarer
+using Robust.Shared.Prototypes; // Wayfarer
+using Content.Shared.Tag; // Wayfarer
+using Robust.Shared.Serialization.TypeSerializers.Implementations; // Wayfarer
+using Content.Shared.Inventory; // Wayfarer
+using Content.Shared.Buckle; // Wayfarer
+using Content.Shared.Buckle.Components; // Wayfarer
 
 namespace Content.Shared.Medical.Healing;
 
