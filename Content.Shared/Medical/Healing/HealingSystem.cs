@@ -37,7 +37,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly TagSystem _tag = default!; //Wayfarer
-    [Dependency] private readonly InventorySystem _inventorySystem = default!; //Wayfarer
+    [Dependency] private readonly InventorySystem _inventorySystem = default!; // Wayfarer
 
     private static readonly ProtoId<TagPrototype> SurgeryToolsTag = "SurgeryTool"; // Wayfarer
 
