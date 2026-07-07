@@ -102,7 +102,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             if (_stacks.GetCount(args.Used.Value, stackComp) <= 0)
                 dontRepeat = true;
         }
-        else if (!_tag.HasTag(args.Used.Value, SurgeryToolsTag)) //wayfarer - Surgery tools should not be consumed.
+        else if (!_tag.HasTag(args.Used.Value, SurgeryToolsTag)) // Wayfarer: Surgery tools should not be consumed.
         {
             PredictedQueueDel(args.Used.Value);
         }
