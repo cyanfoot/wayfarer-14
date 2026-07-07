@@ -39,7 +39,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
     [Dependency] private readonly TagSystem _tag = default!; //Wayfarer
     [Dependency] private readonly InventorySystem _inventorySystem = default!; //Wayfarer
 
-    private static readonly ProtoId<TagPrototype> SurgeryToolsTag = "SurgeryTool"; //Wayfarer
+    private static readonly ProtoId<TagPrototype> SurgeryToolsTag = "SurgeryTool"; // Wayfarer
 
     public override void Initialize()
     {
