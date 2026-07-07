@@ -1,3 +1,4 @@
+# Wayfarer: Use the duffel back below
 # - type: entity
 #   parent: ClothingBackpackDuffelMedical
 #   id: ClothingBackpackDuffelSurgeryFilled
@@ -30,7 +31,8 @@
 #       - id: ClothingHandsGlovesNitrile
 #       - id: EmergencyRollerBedSpawnFolded
 
-- type: entity       # Wayfarer - replacing standard surgical duffel with Surgical Devices filled one.
+# Wayfarer: replacing standard surgical duffel with Surgical Devices filled one.
+- type: entity
   parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelSurgeryFilled
   name: surgical duffel bag
@@ -38,6 +40,7 @@
   components:
   - type: StorageFill
     contents:
+      # Wayfarer
       - id: BruteSurgeryKit
       - id: BurnSurgeryKit
       - id: ToxinSurgeryKit
@@ -45,8 +48,10 @@
       - id: ClothingHandsGlovesNitrile
       - id: EmergencyRollerBedSpawnFolded
       - id: ClothingMaskSterile
+      # End Wayfarer
 
-- type: entity            # Wayfarer - also replacing syndicate/outlaw surgical duffel with Surgical Devices filled one.
+# Wayfarer: also replacing syndicate/outlaw surgical duffel with Surgical Devices filled one.
+- type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
   id: ClothingBackpackDuffelSyndicateFilledMedical
   name: syndicate surgical duffel bag
@@ -54,13 +59,15 @@
   components:
   - type: StorageFill
     contents:
+      # Wayfarer
       - id: BruteSurgeryKit
       - id: BurnSurgeryKit
       - id: ToxinSurgeryKit
       - id: SyringeInaprovaline
       - id: ClothingMaskSterile
       - id: ClothingHandsGlovesNitrile
-      - id: EmergencyRollerBedSpawnFolded      #End of wayfarer
+      - id: EmergencyRollerBedSpawnFolded
+      # End Wayfarer
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

@@ -36,7 +36,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly TagSystem _tag = default!; //Wayfarer
+    [Dependency] private readonly TagSystem _tag = default!; // Wayfarer
     [Dependency] private readonly InventorySystem _inventorySystem = default!; // Wayfarer
 
     private static readonly ProtoId<TagPrototype> SurgeryToolsTag = "SurgeryTool"; // Wayfarer
@@ -171,7 +171,7 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
     {
         if (args.Handled)
             return;
-        if (TryHeal(healing, args.User, args.User, args.User)) //Wayfarer - 4th argument, to surpport surgery tools detecting buckled.
+        if (TryHeal(healing, args.User, args.User, args.User)) // Wayfarer: 4th argument, to surpport surgery tools detecting buckled.
             args.Handled = true;
     }
 
@@ -180,11 +180,11 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
         if (args.Handled || !args.CanReach || args.Target == null)
             return;
 
-        if (TryHeal(healing, args.Target.Value, args.User, args.Target.Value)) //Wayfarer - 4th argument, to surpport surgery tools detecting buckled.
+        if (TryHeal(healing, args.Target.Value, args.User, args.Target.Value)) // Wayfarer: 4th argument, to surpport surgery tools detecting buckled.
             args.Handled = true;
     }
 
-    private bool TryHeal(Entity<HealingComponent> healing, Entity<DamageableComponent?> target, EntityUid user, EntityUid? targetBuckle = null)
+    private bool TryHeal(Entity<HealingComponent> healing, Entity<DamageableComponent?> target, EntityUid user, EntityUid? targetBuckle = null) // Wayfarer: add optional buckle target
     {
         if (!Resolve(target, ref target.Comp, false))
             return false;
@@ -230,14 +230,14 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
             ? healing.Comp.Delay
             : healing.Comp.Delay * GetScaledHealingPenalty(target, healing.Comp.SelfHealPenaltyMultiplier);
 
-        //Wayfarer - Surgical Devices delay is affected by whether the patient is on a bed, and the doctors clothes being sterile
+        // Wayfarer: Surgical Devices delay is affected by whether the patient is on a bed, and the doctors clothes being sterile
         if (_tag.HasTag(healing, SurgeryToolsTag))
         {
 
             var surgerySpeedModifier = 1 - (GetSurgicalEnvironmentBonus(target, healing, user, targetBuckle) / 10);
             delay = delay * surgerySpeedModifier;
         }
-        //end wayfarer
+        // End wayfarer
 
         var doAfterEventArgs =
             new DoAfterArgs(EntityManager, user, delay, new HealingDoAfterEvent(), target, target: target, used: healing)
@@ -273,8 +273,8 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
         var output = percentDamage * (mod - 1) + 1;
         return Math.Max(output, 1);
     }
-
-    public float GetSurgicalEnvironmentBonus(Entity<DamageableComponent?> target, Entity<HealingComponent> healing, EntityUid user, EntityUid? targetBuckle) //Wayfarer
+    // Wayfarer
+    public float GetSurgicalEnvironmentBonus(Entity<DamageableComponent?> target, Entity<HealingComponent> healing, EntityUid user, EntityUid? targetBuckle)
     {
         //generates a score, used for increasing the speed of surgery
         var surgicalEnvironmentPoints = 0.0;
@@ -335,6 +335,6 @@ public sealed partial class HealingSystem : EntitySystem // Wayfarer: Added Part
 
         return (float)Math.Min(surgicalEnvironmentPoints, 8); //cap it at 8 points, so that surgery cant become instant.
     }
-
+    // End Wayfarer
 
 }
