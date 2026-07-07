@@ -1,38 +1,3 @@
-# Wayfarer: Use the duffel back below
-# Wayfarer: Use the duffel back below
-# - type: entity
-#   parent: ClothingBackpackDuffelMedical
-#   id: ClothingBackpackDuffelSurgeryFilled
-#   name: surgical duffel bag
-#   description: "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools."
-#   components:
-#   - type: StorageFill
-#     contents:
-#       - id: Hemostat
-#       - id: Saw
-#       - id: Drill
-#       - id: Cautery
-#       - id: Retractor
-#       - id: Scalpel
-
-# - type: entity
-#   parent: ClothingBackpackDuffelSyndicateMedicalBundle
-#   id: ClothingBackpackDuffelSyndicateFilledMedical
-#   name: syndicate surgical duffel bag
-#   description: A large duffel bag containing a full suite of surgical tools.
-#   components:
-#   - type: StorageFill
-#     contents:
-#       - id: Hemostat
-#       - id: SawAdvanced
-#       - id: Drill
-#       - id: Cautery
-#       - id: Retractor
-#       - id: ScalpelAdvanced
-#       - id: ClothingHandsGlovesNitrile
-#       - id: EmergencyRollerBedSpawnFolded
-
-# Wayfarer: replacing standard surgical duffel with Surgical Devices filled one.
 - type: entity
   parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelSurgeryFilled
@@ -41,6 +6,12 @@
   components:
   - type: StorageFill
     contents:
+      # - id: Hemostat
+      # - id: Saw
+      # - id: Drill
+      # - id: Cautery
+      # - id: Retractor
+      # - id: Scalpel
       # Wayfarer
       - id: BruteSurgeryKit
       - id: BurnSurgeryKit
@@ -51,7 +22,6 @@
       - id: ClothingMaskSterile
       # End Wayfarer
 
-# Wayfarer: also replacing syndicate/outlaw surgical duffel with Surgical Devices filled one.
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
   id: ClothingBackpackDuffelSyndicateFilledMedical
@@ -60,15 +30,20 @@
   components:
   - type: StorageFill
     contents:
-      # Wayfarer
+      # - id: Hemostat
+      # - id: SawAdvanced
+      # - id: Drill
+      # - id: Cautery
+      # - id: Retractor
+      # - id: ScalpelAdvanced
+      - id: ClothingHandsGlovesNitrile
+      - id: EmergencyRollerBedSpawnFolded
       # Wayfarer
       - id: BruteSurgeryKit
       - id: BurnSurgeryKit
       - id: ToxinSurgeryKit
       - id: SyringeInaprovaline
       - id: ClothingMaskSterile
-      - id: ClothingHandsGlovesNitrile
-      - id: EmergencyRollerBedSpawnFolded
       # End Wayfarer
 
 - type: entity
