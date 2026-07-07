@@ -60,6 +60,7 @@
   - type: StorageFill
     contents:
       # Wayfarer
+      # Wayfarer
       - id: BruteSurgeryKit
       - id: BurnSurgeryKit
       - id: ToxinSurgeryKit
