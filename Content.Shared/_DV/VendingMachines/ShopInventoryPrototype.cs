@@ -6,7 +6,7 @@ namespace Content.Shared._DV.VendingMachines;
 /// <summary>
 /// Similar to <c>VendingMachineInventoryPrototype</c> but for <see cref="ShopVendorComponent"/>.
 /// </summary>
-[Prototype]
+[Prototype("shopInventory")]
 public sealed partial class ShopInventoryPrototype : IPrototype
 {
     [IdDataField]
