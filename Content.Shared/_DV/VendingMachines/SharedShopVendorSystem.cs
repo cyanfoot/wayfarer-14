@@ -2,7 +2,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Advertise.Systems;
 using Content.Shared.Advertise.Components;
 using Content.Shared._DV.Fishing.Systems;
-using Content.Shared._DV.Salvage.Systems;
+// using Content.Shared._DV.Salvage.Systems; We dont have salvage vends in Wayfarer.
 using Content.Shared.Destructible;
 using Content.Shared.Popups;
 using Content.Shared.Power;
@@ -18,7 +18,8 @@ namespace Content.Shared._DV.VendingMachines;
 public abstract class SharedShopVendorSystem : EntitySystem
 {
     [Dependency] private readonly AccessReaderSystem _access = default!;
-    [Dependency] private readonly MiningPointsSystem _points = default!;
+
+    // [Dependency] private readonly MiningPointsSystem _points = default!;
     [Dependency] private readonly FishingPointsSystem _fishingPoints = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -33,8 +34,8 @@ public abstract class SharedShopVendorSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PointsVendorComponent, ShopVendorBalanceEvent>(OnPointsBalance);
-        SubscribeLocalEvent<PointsVendorComponent, ShopVendorPurchaseEvent>(OnPointsPurchase);
+        // SubscribeLocalEvent<PointsVendorComponent, ShopVendorBalanceEvent>(OnPointsBalance);
+        // SubscribeLocalEvent<PointsVendorComponent, ShopVendorPurchaseEvent>(OnPointsPurchase);
 
         SubscribeLocalEvent<FishingPointsVendorComponent, ShopVendorBalanceEvent>(OnFishingPointsBalance);
         SubscribeLocalEvent<FishingPointsVendorComponent, ShopVendorPurchaseEvent>(OnFishingPointsPurchase);
@@ -61,16 +62,16 @@ public abstract class SharedShopVendorSystem : EntitySystem
 
     #region Balance adapters
 
-    private void OnPointsBalance(Entity<PointsVendorComponent> ent, ref ShopVendorBalanceEvent args)
-    {
-        args.Balance = _points.TryFindIdCard(args.User)?.Comp?.Points ?? 0;
-    }
+    // private void OnPointsBalance(Entity<PointsVendorComponent> ent, ref ShopVendorBalanceEvent args)
+    // {
+    //     args.Balance = _points.TryFindIdCard(args.User)?.Comp?.Points ?? 0;
+    // }
 
-    private void OnPointsPurchase(Entity<PointsVendorComponent> ent, ref ShopVendorPurchaseEvent args)
-    {
-        if (_points.TryFindIdCard(args.User) is {} idCard && _points.RemovePoints(idCard, args.Cost))
-            args.Paid = true;
-    }
+    // private void OnPointsPurchase(Entity<PointsVendorComponent> ent, ref ShopVendorPurchaseEvent args)
+    // {
+    //     if (_points.TryFindIdCard(args.User) is {} idCard && _points.RemovePoints(idCard, args.Cost))
+    //         args.Paid = true;
+    // }
 
     private void OnFishingPointsBalance(Entity<FishingPointsVendorComponent> ent, ref ShopVendorBalanceEvent args)
     {
