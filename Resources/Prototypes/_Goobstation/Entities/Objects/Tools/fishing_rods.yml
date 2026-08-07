@@ -67,7 +67,10 @@
   id: FishingRodGolden
   parent: FishingRod
   name: golden fishing rod
+  # Wayfarer Start
+  # description: Finally, you caught 250 fishes. Here's your trophey.
   description: Congratulations on your catch! Here's your trophy.
+  # Wayfarer End
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Fishing/golden_rod.rsi
