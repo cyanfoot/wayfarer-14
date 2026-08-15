@@ -23,7 +23,7 @@
     WehImplanter: 10 # Frontier
     LightImplanter: 10 # Frontier
     BoxFolderMedicalDoctor: 4294967295 # Frontier - infinite
-    MedTekCartridge: 3 # Frontier
+    # MedTekCartridge: 3 # Frontier  Wayfarer: Removed most sources of MedTeks
 
   # contrabandInventory: # Frontier
   #   FoodApple: 1 # Frontier

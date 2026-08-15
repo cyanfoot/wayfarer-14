@@ -44,6 +44,7 @@
   storage:
     back:
     - EncryptionKeyMedical
+    - handheldhealthanalyzer 
 - type: loadout
   id: EmergencyResponderPDA
   price: 0

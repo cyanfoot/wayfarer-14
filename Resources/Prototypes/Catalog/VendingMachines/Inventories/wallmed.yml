@@ -14,7 +14,8 @@
     ChemistryBottleEthylredoxrazine: 2 # Frontier
     Syringe: 6 # Frontier: 3<6
     BoxFolderMedicalDoctor: 1 #Frontier
-    MedTekCartridge: 1 # Frontier
+    # MedTekCartridge: 1 # Frontier  Wayfarer: Removed most sources of MedTeks
+    HandheldHealthAnalyzer: 1 # Wayfarer - replacing MedTeks
     ClothingEyesHudMedical: 1 # Frontier
   contrabandInventory:
     PowerCellSmall: 2

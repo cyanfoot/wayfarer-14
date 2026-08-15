@@ -1737,7 +1737,7 @@
   maxLimit: 5
   loadouts:
   - WFAppraisalCartridge
-  - WFMedTekCartridge
+  # - WFMedTekCartridge Wayfarer: removed most sources of MedTeks
   - WFCriticalImplantTrackerCartridge
   - WFNetProbeCartridge
   - WFLogProbeCartridge

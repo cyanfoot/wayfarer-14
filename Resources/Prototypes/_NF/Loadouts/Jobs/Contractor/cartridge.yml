@@ -8,14 +8,14 @@
   cartridges:
   - AppraisalCartridge
 
-- type: loadout
-  id: ContractorMedTekCartridge
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 1000
-  cartridges:
-  - MedTekCartridge
+# - type: loadout      Wayfarer, removed most sources of MedTek cartridges
+#   id: ContractorMedTekCartridge
+#   effects:
+#   - !type:GroupLoadoutEffect
+#     proto: ContractorT1
+#   price: 1000
+#   cartridges:
+#   - MedTekCartridge
 
 # Wayfarer
 - type: loadout

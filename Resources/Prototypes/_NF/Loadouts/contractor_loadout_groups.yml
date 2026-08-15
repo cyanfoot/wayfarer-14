@@ -993,7 +993,7 @@
   maxLimit: 5
   loadouts:
   - ContractorAppraisalCartridge
-  - ContractorMedTekCartridge
+  # - ContractorMedTekCartridge Wayfarer, removed most sources of MedTek cartridges
   - ContractorCriticalImplantTrackerCartridge # Wayfarer
   - ContractorNetProbeCartridge
   - ContractorLogProbeCartridge

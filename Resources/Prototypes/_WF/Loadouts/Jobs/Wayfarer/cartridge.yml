@@ -5,11 +5,11 @@
   cartridges:
   - AppraisalCartridge
 
-- type: loadout
-  id: WFMedTekCartridge
-  price: 100
-  cartridges:
-  - MedTekCartridge
+# - type: loadout Wayfarer, removed most sources of MedTek cartridges
+#   id: WFMedTekCartridge
+#   price: 100
+#   cartridges:
+#   - MedTekCartridge
 
 - type: loadout
   id: WFCriticalImplantTrackerCartridge
