@@ -1249,7 +1249,7 @@
   parent: BaseAlcohol
   desc: reagent-desc-irish-cream
   physicalDesc: reagent-physical-desc-creamy
-  flavor: irish-cream #Delta-V Flavor additions
+  flavor: creamy
   color: "#d9c7ac" #DeltaV: Color changed
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/irishcreamglass.rsi
@@ -1727,7 +1727,7 @@
   parent: BaseAlcohol
   desc: reagent-desc-silencer
   physicalDesc: reagent-physical-desc-nothing # DeltaV: Desc changed
-  flavor: silencer #Delta-V Flavor additions
+  flavor: nothing
   color: "#878787"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/silencerglass.rsi
