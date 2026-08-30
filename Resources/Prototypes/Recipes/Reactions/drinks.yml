@@ -525,19 +525,15 @@
 
 - type: reaction
   id: Grog
-  requiredMixerCategories: # DeltaV: Added requiredMixerCategories: Stir
-  - Stir
   reactants:
     Rum:
       amount: 1
     Water:
-      amount: 3 # DeltaV: Water amount changed from 2 to 3
+      amount: 2
     Sugar:
       amount: 1
-    JuiceLime: # DeltaV: JuiceLime added
-      amount: 1
   products:
-    Grog: 6 # DeltaV: Products changed from 4 to 6
+    Grog: 4
 
 - type: reaction
   id: HippiesDelight
