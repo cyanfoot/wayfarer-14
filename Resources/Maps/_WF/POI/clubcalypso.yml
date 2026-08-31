@@ -105,8 +105,6 @@ entities:
     - type: MetaData
       desc: Is nude or nothing.
       name: Club Calypso
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -126511,7 +126509,7 @@ entities:
 
 
 
-        This section of the station is undergoing renovation, to maintain Miss Mama's Resorts (Incorporated) high quality standards for guests. 
+        This section of the station is undergoing renovation, to maintain Miss Mama's Resorts (Incorporated) high quality standards for guests.
 
 
         As it is abandoned and unlit it may pose a danger to guests, or harbor unsavory elements, so its best you do not enter.
@@ -126535,7 +126533,7 @@ entities:
 
 
 
-        This section of the station is undergoing renovation, to maintain Miss Mama's Resorts (Incorporated) high quality standards for guests. 
+        This section of the station is undergoing renovation, to maintain Miss Mama's Resorts (Incorporated) high quality standards for guests.
 
 
         As it is abandoned and unlit it may pose a danger to guests, or harbor unsavory elements, so its best you do not enter.
