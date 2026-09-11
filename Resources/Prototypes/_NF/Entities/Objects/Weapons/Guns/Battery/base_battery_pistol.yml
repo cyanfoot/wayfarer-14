@@ -18,7 +18,7 @@
     zeroVisible: true
   - type: Appearance
   - type: Gun
-    projectileSpeed: 30
+    projectileSpeed: 84 # Wayfarer 30 > 84
     minAngle: 1.8
     maxAngle: 9
     angleIncrease: 0.5

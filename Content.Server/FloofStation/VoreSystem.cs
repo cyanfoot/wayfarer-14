@@ -731,7 +731,14 @@ public sealed class VoreSystem : EntitySystem
             {
                 DamageSpecifier damage = new();
                 damage.DamageDict.Add("Caustic", 1);
-                _damageable.TryChangeDamage(uid, damage, true, false);
+
+                var damageDone = _damageable.TryChangeDamage(uid, damage, true, false); //Wayfarer: deal blunt damage if caustic is blocked, to allow digesting IPC. Amount is halved, to account for no crit state.
+                if (damageDone == null || damageDone.GetTotal() == 0)
+                {
+                    damage.DamageDict.Add("Blunt", 0.5f);
+                    _damageable.TryChangeDamage(uid, damage, true, false); 
+                }//End Wayfarer
+
 
                 // Give 1 Hunger per 1 Caustic Damage.
                 if (TryComp<HungerComponent>(vored.Pred, out var hunger))

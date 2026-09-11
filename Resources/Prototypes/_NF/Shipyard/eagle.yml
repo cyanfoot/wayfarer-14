@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: NM Eagle
   description: "A medium-sized engineering and medical vessel. Focused on responding to shuttle distress, the Eagle comes equipped to restore most crew and shuttles to good health."
-  price: 72500 # 60603 0.2 72723
+  price: 95000
   category: Medium
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/eagle.yml

@@ -4,7 +4,7 @@
   parent: [BaseMob, MobDamageable, MobCombat, MobAtmosExposed, MobFlammable]
   abstract: true
   components:
-    #- type: Vore # Floofstation - Vore # Wayfarer: Actually, not sure if this will work well given how they can't eat.
+    - type: Vore # Floofstation - Vore
     - type: ModifyUndies # Floofstation
 # Wayfarer: This is needed due to the unique base
     - type: Carriable

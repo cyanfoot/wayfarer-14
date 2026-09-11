@@ -6224,3 +6224,201 @@ Entries:
   id: 7211
   time: '2026-08-25T03:03:16.0000000+00:00'
   url: https://github.com/project-wayfarer/wayfarer-14/pull/1503
+- author: Khaomi
+  changes:
+    - type: Tweak
+      message: Changed Shadekin to have NightVision
+  id: 7212
+  time: '2026-08-30T14:59:58.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1471
+- author: Cat-With-A-Computer
+  changes:
+    - type: Add
+      message: Outlaws can now get mail.
+    - type: Tweak
+      message: UIV's and Hulks now happen ~3x less frequently
+    - type: Tweak
+      message: Coldlight UIV's are 1/4th as common as the other UIV's
+    - type: Remove
+      message: Vaults no longer happen naturally
+  id: 7213
+  time: '2026-08-30T15:28:52.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1507
+- author: Rellu225
+  changes:
+    - type: Tweak
+      message: Morgue is now deconstructible!
+  id: 7214
+  time: '2026-08-30T15:44:12.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1499
+- author: cyanfoot
+  changes:
+    - type: Tweak
+      message: IPCs can now vore/digest, and be vored/digested.
+  id: 7215
+  time: '2026-08-30T15:54:39.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1505
+- author: TheSlapper
+  changes:
+    - type: Add
+      message: One new lobby art
+  id: 7216
+  time: '2026-08-30T16:10:53.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1510
+- author: cyanfoot
+  changes:
+    - type: Add
+      message: >-
+        Ported Angobitters, and drinks made with it such as an Old Fashioned,
+        from DeltaV
+    - type: Tweak
+      message: Changed the sprites of some existing drinks, such as moonshine
+  id: 7217
+  time: '2026-08-30T18:38:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1506
+- author: cyanfoot
+  changes:
+    - type: Add
+      message: 'Borg QoL improvements: Radio keys, and stripping people'
+  id: 7218
+  time: '2026-08-31T01:42:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1515
+- author: gaywolfgirl6
+  changes:
+    - type: Tweak
+      message: Maintained Frontier ships, adjusted their prices.
+  id: 7219
+  time: '2026-08-31T02:35:48.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1464
+- author: RoY7x
+  changes:
+    - type: Add
+      message: >-
+        The ability to now manually set yourself as SSD for when you need to
+        AFK!
+  id: 7220
+  time: '2026-08-31T03:09:10.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1508
+- author: cyanfoot
+  changes:
+    - type: Tweak
+      message: >-
+        Changed some parts of Calypso's Restaurant, Medbay, and Construction
+        Site.
+  id: 7221
+  time: '2026-08-31T03:19:44.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1514
+- author: Cat-With-A-Computer
+  changes:
+    - type: Tweak
+      message: Bullets are now a bit faster
+    - type: Fix
+      message: Bullets no longer phase through things
+  id: 7222
+  time: '2026-09-03T23:47:37.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1517
+- author: Goodfaun
+  changes:
+    - type: Tweak
+      message: >-
+        Cargotokens, Telecrystals, Zekke credit, Data chit can fit in wallet
+        now... again.
+  id: 7223
+  time: '2026-09-07T01:34:31.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1516
+- author: Cat-With-A-Computer
+  changes:
+    - type: Tweak
+      message: Shadekin night vision doesn't turn off when exposed to light
+  id: 7224
+  time: '2026-09-07T01:38:15.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1518
+- author: Cat-With-A-Computer
+  changes:
+    - type: Fix
+      message: Shadekin now properly receive roleplay incentive
+  id: 7225
+  time: '2026-09-07T01:41:18.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1519
+- author: Cat-With-A-Computer
+  changes:
+    - type: Add
+      message: Ghost role night vision
+  id: 7226
+  time: '2026-09-07T01:47:19.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1520
+- author: Cat-With-A-Computer
+  changes:
+    - type: Fix
+      message: CGP Large Thrusters now scale properly with upgraded parts
+  id: 7227
+  time: '2026-09-07T01:49:28.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1521
+- author: Khaomi
+  changes:
+    - type: Add
+      message: Added some missing localization for Shadekin's Core
+  id: 7228
+  time: '2026-09-07T01:54:17.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1525
+- author: AndleHeart
+  changes:
+    - type: Tweak
+      message: Perdition has received an overhaul.
+    - type: Add
+      message: Syndicate Shipyard Console to Perdition.
+    - type: Add
+      message: Contravend to Perdition Armory.
+    - type: Add
+      message: Outlaw Techfab to Perdition Armory.
+    - type: Add
+      message: Janitorial to Perdition.
+    - type: Add
+      message: Brig to Perdition.
+    - type: Tweak
+      message: Perdition medbay overhauled.
+    - type: Tweak
+      message: Perdition power network adjusted.
+    - type: Add
+      message: Morgue to Perdition.
+    - type: Add
+      message: Chembay to Perdition.
+    - type: Add
+      message: Oxygen and Nitrogen gas miners to Perdition.
+    - type: Tweak
+      message: Perdition atmospherics redone.
+    - type: Tweak
+      message: Perdition docking bay's expanded.
+    - type: Tweak
+      message: Perdition bar expanded.
+    - type: Remove
+      message: Pirate Hideout from Perdition maintenance.
+    - type: Remove
+      message: Blood Cult cell from Perdition maintenance.
+  id: 7229
+  time: '2026-09-07T01:58:27.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1555
+- author: Hawk-v3
+  changes:
+    - type: Add
+      message: >-
+        Added CGP and Outlaw wall-mounted repositories with names aiming for a
+        move away from uplinks. These have not yet been mapped, and there are no
+        loadout/round start changes.
+  id: 7230
+  time: '2026-09-07T02:01:35.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1556
+- author: Khaomi
+  changes:
+    - type: Add
+      message: Added cross map radio channel called "Interstellar"
+  id: 7231
+  time: '2026-09-07T02:37:59.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1498
+- author: sacafe
+  changes:
+    - type: Tweak
+      message: recorder range
+  id: 7232
+  time: '2026-09-07T03:10:27.0000000+00:00'
+  url: https://github.com/project-wayfarer/wayfarer-14/pull/1559

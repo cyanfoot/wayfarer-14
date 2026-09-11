@@ -119,6 +119,14 @@
       - DrinkShakeWhite
       - DrinkTheMartinez
       - DrinkMoonshineGlass
+      # Begin DeltaV additions
+      - LemonLimeBittersGlass
+      - OldFashionedGlass
+      - MnatsaCollinsGlass
+      - AffogatoGlass
+      - FiveOClockGlass
+      # End DeltaV additions
+
     chance: 0.8
     offset: 0.0
     #rare

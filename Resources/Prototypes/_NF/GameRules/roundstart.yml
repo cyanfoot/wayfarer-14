@@ -12,19 +12,21 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: MajorBluespaceEventsTable
-    minimumTimeUntilFirstEvent: 2700 # 45 minutes
+    minimumTimeUntilFirstEvent: 7200 # Wayfarer: 45 minutes < 2 hours
     minMaxEventTiming:
-      min: 2700 # 45 minutes between events
-      max: 4500 # 75 minutes between events
+      min: 7200 # Wayfarer: 45 minutes < 2 hours between events
+      max: 10800 # Wayfarer: 75 minutes < 3 hours between events
 
 - type: entityTable
   id: MajorBluespaceEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: BluespaceCacheError
+    # Wayfarer Start
+    # - id: BluespaceCacheError
     - id: BluespaceCave
-    - id: BluespaceVaultError
-    - id: BluespaceVaultSmallError
+    # - id: BluespaceVaultError
+    # - id: BluespaceVaultSmallError
+    # End Wayfarer
     - id: BluespaceSyndicateFTLInterception
     - id: BluespaceWizardFederationScout
     - id: BluespaceBloodMoon
@@ -36,10 +38,10 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: DungeonBluespaceEventsTable
-    minimumTimeUntilFirstEvent: 600 # 10 minutes
+    minimumTimeUntilFirstEvent: 3600 # Wayfarer: 10 minutes < 1 hour
     minMaxEventTiming:
-      min: 2100 # 35 minutes between events
-      max: 2400 # 40 minutes between events
+      min: 5400 # Wayfarer: 35 minutes < 90 minutes between events
+      max: 6600 # Wayfarer: 40 minutes < 110 minutes between events
 
 - type: entityTable
   id: DungeonBluespaceEventsTable
@@ -107,7 +109,7 @@
       allowNonHumans: true
       multiAntagSetting: All
       components: &pirateComponents
-      - type: MailDisabled
+      # - type: MailDisabled Wayfarer
       - type: NpcFactionMember
         factions:
         - NFPirate

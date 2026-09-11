@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: NC Piecrust
   description: A rustic cafe for the nostalgic deep space chef.
-  price: 34000 # 30500 0.05 32025
+  price: 41000
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/piecrust.yml

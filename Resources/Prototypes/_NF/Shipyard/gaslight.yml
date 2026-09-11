@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: FSC Gaslight
   description: A compact gas extraction and mining vessel designed and deployed by the Far Star Corporation.
-  price: 40000
+  price: 52000
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/gaslight.yml

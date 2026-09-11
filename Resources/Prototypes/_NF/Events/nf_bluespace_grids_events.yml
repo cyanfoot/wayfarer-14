@@ -199,7 +199,7 @@
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 100
     minimumPlayers: 15
-    weight: 1
+    weight: 4 # Wayfarer 1<4
     duration: 900
     maxDuration: 1200
     reoccurrenceDelay: 360 # 6 hours
@@ -238,7 +238,7 @@
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 80
     minimumPlayers: 15
-    weight: 1
+    weight: 4 # Wayfarer 1<4
     duration: 1800
     maxDuration: 2400
     reoccurrenceDelay: 360 # 6 hours
@@ -276,10 +276,10 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_asteroid_leave.ogg
     earliestStart: 20
-    weight: 1
+    weight: 4 # Wayfarer 1<4
     duration: 1800
     maxDuration: 2400
-    reoccurrenceDelay: 180 # 3 hours
+    reoccurrenceDelay: 360 # Wayfarer: 3 hours < 6 hours
 #    maxOccurrences: 1 # WF
   - type: BluespaceErrorRule
     groups:

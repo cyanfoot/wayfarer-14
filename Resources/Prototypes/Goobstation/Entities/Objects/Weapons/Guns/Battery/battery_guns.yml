@@ -23,6 +23,7 @@
     - Back
     sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
   - type: Gun
+    projectileSpeed: 112 # Wayfarer 25 > 112
     fireRate: 1.3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg

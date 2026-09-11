@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: LVHI Lantern Mk2
   description: The Lantern Mk2 is a small-sized modification of and old chapel-vessel design equipped with everything chaplain might need in their never ending battle for salvation of NT personnel souls. Manufactured by Langstad-Voigt Heavy Industries.
-  price: 33000 # $30035 0.1 33039
+  price: 41000
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/lanternmk2.yml

@@ -15,6 +15,7 @@
     maxAngle: 17
     angleIncrease: 0.9
     angleDecay: 4.5
+    projectileSpeed: 84 # Wayfarer 25 > 84
     fireRate: 2.0
     selectedMode: SemiAuto
     availableModes:

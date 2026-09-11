@@ -23,7 +23,7 @@
     minAngle: -0.4
     maxAngle: -2
   - type: Gun
-    projectileSpeed: 30
+    projectileSpeed: 84 # Wayfarer 30 > 84
     minAngle: 2.1
     maxAngle: 10.5
     angleIncrease: 0.5

@@ -1,5 +1,9 @@
 - type: lobbyBackground
   id: WFLobbyScreen1
   background: /Textures/_WF/LobbyScreens/lobby.webp
+
+- type: lobbyBackground
+  id: WFLobbyScreen2
+  background: /Textures/_WF/LobbyScreens/clownbackstage.webp
   # Add your lobby screen prototypes here
   # Remember to place your .webp images in Resources/Textures/_WF/LobbyScreens/

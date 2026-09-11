@@ -315,8 +315,8 @@ public sealed partial class ShadekinSystem : EntitySystem
     //     if (nightVision.Active == shouldBeActive)
     //         return;
 
-    //     // update whether or not nightVision should be active based on light level
-    //     nightVision.Active = shouldBeActive;
+        // update whether or not nightVision should be active based on light level
+        // nightVision.Enabled = shouldBeEnabled; // Wayfarer
 
     //     // ensure nightVision updates to reflect the new state
     //     Dirty(uid, nightVision);

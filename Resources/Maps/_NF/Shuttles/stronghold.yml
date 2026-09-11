@@ -45,8 +45,6 @@ entities:
     components:
     - type: MetaData
       name: Stronghold
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
