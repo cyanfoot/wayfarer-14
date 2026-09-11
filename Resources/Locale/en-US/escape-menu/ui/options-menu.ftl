@@ -122,6 +122,7 @@ ui-options-ambient-occlusion = Show Ambient Occlusion
 ui-options-fps-counter = Show FPS counter
 ui-options-vp-width = Viewport width:
 ui-options-hud-layout = HUD layout:
+ui-options-hud-chatbar = Chatbox max height:
 
 ## Controls menu
 
@@ -377,6 +378,7 @@ ui-options-enable-color-name = Add colors to character names
 ui-options-enable-body-color = Color chat message text by speaker
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
+ui-options-disable-nv-noise = Disable the noise effect on the night vision overlay
 ui-options-screen-shake-intensity = Screen shake intensity
 
 ui-options-chat-window-opacity = Chat window opacity

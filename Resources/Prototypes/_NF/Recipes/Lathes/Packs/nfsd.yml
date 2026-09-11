@@ -94,6 +94,7 @@
   - ClothingMaskGasSecurity # Wayfarer
   - WFContrabandForensicsModule # Wayfarer
   - WFForensicScanner # Wayfarer
+  - PinpointerUniversalNF # Wayfarer
 
 - type: latheRecipePack
   id: NfsdTargetsStatic
@@ -111,8 +112,10 @@
   #- NFWeaponRevolverArgenti # Wayfarer
   #- NFWeaponPistolMk58 # Wayfarer
   #- NFWeaponShotgunDoubleBarreled # Wayfarer
+  #- NFWeaponShotgunKammerer # Wayfarer
   #- NFWeaponRifleAssaultNovaliteC1 # Wayfarer
   #- NFWeaponRifleAssaultGestio # Wayfarer
+  #- NFWeaponEnergyRifleAssaultLaserRepeater # Wayfarer
   #- WeaponPistolPollock # Wayfarer
   - NFStunbaton
   - NFWeaponEnergyPistolDisabler
@@ -146,6 +149,7 @@
   - WFGrenadeHEAT
   - WFMagazineGrenadeHEAT
   - NFGrenadeEMP
+  - WFCartridgeRocketEmp
   - NFMagazineGrenadeEMP
   - ArmorPlateLight
   - ArmorPlateMedium

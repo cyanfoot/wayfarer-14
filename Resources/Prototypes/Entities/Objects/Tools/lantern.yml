@@ -4,6 +4,7 @@
   id: Lantern
   description: The holy light guides the way.
   components:
+    - type: ConstructionMaterials # Frontier
     - type: HandheldLight
       addPrefix: true
       blinkingBehaviourId: blinking
@@ -90,8 +91,14 @@
       radius: 5
       energy: 10
     - type: Flash
-      flashOnMelee: false
-      flashOnUse: false
+      # Wayfarer Start
+      # flashOnUse: false
+      # flashOnMelee: false
+      flashOnToggle: false
+    - type: UseDelay
+      delay: 4
+    - type: UseDelayOnMeleeHit
+      # Wayfarer End
     - type: LimitedCharges
       maxCharges: 15
     - type: MeleeWeapon

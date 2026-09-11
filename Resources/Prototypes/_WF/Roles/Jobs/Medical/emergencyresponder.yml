@@ -18,8 +18,9 @@
   accessGroups:
   - GeneralAccess
   special:
-  - !type:AddImplantSpecial
-    implants: [ TrackingImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: PreventShipyardTitleOverwrite
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
@@ -78,6 +79,7 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm

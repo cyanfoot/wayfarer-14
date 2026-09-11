@@ -2,6 +2,8 @@ uplink-outlaw-hardsuit-name = Outlaw Hardsuit
 uplink-outlaw-hardsuit-desc = A rugged, lightly armored combat hardsuit used by Outlaws.
 uplink-outlaw-hardsuitcombat-name = Outlaw Combat Hardsuit
 uplink-outlaw-hardsuitcombat-desc = A heavy combat hardsuit used by Outlaws.
+uplink-pirate-hardsuit-name = Pirate Softsuit
+uplink-pirate-hardsuit-desc = Hailed from the depths of the ocean, more suitable for water than for space.
 
 uplink-outlaw-tacvest-name = Tactical Vest
 uplink-outlaw-tacvest-desc = A tactical vest procured from the Black Market. Sturdy materials provide good protection.
@@ -37,8 +39,8 @@ uplink-outlaw-box35extincendiary-name = .35 Extended Incendiary Magazines
 uplink-outlaw-box35extincendiary-desc = A box full of extended pistol (.35 pistol, incendiary) magazines.
 uplink-outlaw-box35exturanium-name = .35 Extended Uranium Magazines
 uplink-outlaw-box35exturanium-desc = A box full of extended pistol (.35 pistol, uranium) magazines.
-uplink-outlaw-box35smg-name = .35 SMG Magazines
-uplink-outlaw-box35smg-desc = A box full of smg (.35 pistol) magazines.
+uplink-outlaw-box35smg-name = .35 SMG (Overpressure) Magazines
+uplink-outlaw-box35smg-desc = A box full of smg (.35 pistol, Overpressure) magazines.
 uplink-outlaw-box35smgrubber-name = .35 SMG ( Rubber ) Magazines
 uplink-outlaw-box35smgrubber-desc = A box full of smg (.35 pistol, rubber) magazines.
 
@@ -68,6 +70,8 @@ uplink-outlaw-vialthc-name = Vial (THC)
 uplink-outlaw-vialthc-desc = The main psychoactive compound in cannabis.
 uplink-outlaw-vialspacedrugs-name = Vial (Space Mirage)
 uplink-outlaw-vialspacedrugs-desc = An illegal compound which induces a number of effects such as loss of balance and visual artefacts.
+uplink-outlaw-uncockedmedipen-name = Uncocked Combat Medipen
+uplink-outlaw-uncockedmedipen-desc = A combat medipen, ready to be primed in the outlaw assembler.
 
 uplink-outlaw-voucher-name = Black Market ship voucher
 uplink-outlaw-voucher-desc = A voucher card allowing the redemption of a ship from the black market shipyard.

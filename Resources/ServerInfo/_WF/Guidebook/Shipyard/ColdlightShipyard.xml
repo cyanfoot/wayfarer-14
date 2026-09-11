@@ -1,0 +1,12 @@
+﻿<Document>
+  # Coldlight Shipyards
+  Standard Coldlight class ships
+
+  ## Coldlight Shipyard Console
+  <Box>
+    <GuideEntityEmbed Entity="ComputerShipyardSyndicate"/>
+  </Box>
+
+  Coldlight or whatever ships this console will sell.
+
+</Document>

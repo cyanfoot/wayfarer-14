@@ -399,21 +399,22 @@
       - id: CrateAmmoBoxBigLethal20
 #      - id: CrateAmmoBoxBigLethal25 # Wayfarer
       - id: CrateAmmoBoxBigLethal30
-#      - id: CrateAmmoBoxBigRubber20 # Wayfarer
-#      - id: CrateAmmoBoxBigRubber25 # Wayfarer
-#      - id: CrateAmmoBoxFlareShotgun # Wayfarer
+      - id: CrateAmmoBoxBigLethal35
+      - id: CrateAmmoBoxBigLethal45
+      - id: CrateAmmoBoxBigLethalShotgun
+      #- id: CrateAmmoBoxBigRubber20 # Wayfarer
+      #- id: CrateAmmoBoxBigRubber25 # Wayfarer
+      #- id: CrateAmmoBoxFlareShotgun # Wayfarer
     # T5 - Legendary
-    # Wayfarer: Disabled
-#    - !type:GroupSelector
-#      weight: 0.05
-#      children:
-#      - id: CrateAmmoBoxPractice20
-#      - id: CrateAmmoBoxPractice25
-#      - id: CrateAmmoBoxPractice30
-#      - id: CrateAmmoBoxPractice35
-#      - id: CrateAmmoBoxPractice45
-#      - id: CrateAmmoBoxPracticeShotgun
-    # End Wayfarer
+    # - !type:GroupSelector
+    #   weight: 0.05
+    #   children:
+    #   - id: CrateAmmoBoxPractice20
+    #   - id: CrateAmmoBoxPractice25
+    #   - id: CrateAmmoBoxPractice30
+    #   - id: CrateAmmoBoxPractice35
+    #   - id: CrateAmmoBoxPractice45
+    #   - id: CrateAmmoBoxPracticeShotgun
 
 # region Crates (Armor)
 - type: entityTable

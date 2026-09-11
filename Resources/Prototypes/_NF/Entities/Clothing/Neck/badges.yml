@@ -15,7 +15,7 @@
 # Wayfarer Start
   - type: Tag
     tags:
-    - WhitelistWallet
+    - FitsWallet
 # end Wayfarer
 
 - type: entity

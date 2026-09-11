@@ -12,7 +12,6 @@
   - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
-  - type: ProximityNPC # Misfits Add — sleep distant NPCs to reduce tick load
   - type: Fixtures
     fixtures:
       fix1:
@@ -148,9 +147,6 @@
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
-# // WF - Use new values
-    attackRate: 1 # WF
-    range: 1.5 # WF
     soundHit:
       collection: MetalThud
     damage:
@@ -262,3 +258,14 @@
     bloodlossHealDamage:
       types:
         Bloodloss: -1
+
+# Used for mobs that should slightly see in the dark
+- type: entity
+  save: false
+  id: MobNightVision
+  abstract: true
+  components:
+  - type: NightVision
+    prioritized: false
+    relayOverlay: false # In case default value ever changes
+    lightingColor: '#FFFFFF15' # Basically makes it impossible for things to be "Pitch black" but can still be dark.

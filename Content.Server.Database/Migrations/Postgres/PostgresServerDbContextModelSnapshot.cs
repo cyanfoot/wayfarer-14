@@ -1610,7 +1610,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnName("display_name");
 
                     b.Property<string>("EntityPrototypeId")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("entity_prototype_id");
 
@@ -1618,9 +1617,17 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("goal_id");
 
+                    b.Property<bool>("IsKillOrder")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_kill_order");
+
                     b.Property<long>("RequiredAmount")
                         .HasColumnType("bigint")
                         .HasColumnName("required_amount");
+
+                    b.Property<string>("TagId")
+                        .HasColumnType("text")
+                        .HasColumnName("tag_id");
 
                     b.HasKey("Id")
                         .HasName("PK_wayfarer_community_goal_requirements");

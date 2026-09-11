@@ -1,6 +1,6 @@
-﻿- type: guideEntry
-  id: CgpShipyard
-  name: guide-entry-cgpshipyard
+- type: guideEntry
+  id: ShipyardCGP
+  name: guide-entry-shipyard-cgp
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard.xml"
   priority: 7
   children:
@@ -14,154 +14,28 @@
   - ShipyardQauata
   - ShipyardSvalinn
 
-- type: guideEntry
-  id: CivShipyard
-  name: guide-entry-civshipyard
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard.xml"
-  priority: 7
-  children:
-  - ShipyardAdder # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardAmbition # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBarge # FronterShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBaroness # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBocadillo # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBodkin # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBookworm # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-
-  - ShipyardBulker # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCamper # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCeres # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardChisel # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardComet # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCopperhead # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCopperskree
-  - ShipyardCourier # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCrescent # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCrossroads # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardDioddef
-  - ShipyardDowntownsuperstar
-  - ShipyardDragoon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardFirefighter # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardGarden # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardGasbender # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardGaslight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardGrandqueen
-  - ShipyardGrandideals
-  - ShipyardHamger
-  - ShipyardHammer # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardHauler # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardHonker # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardHound # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardInvestigator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardIzakaya # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardKestrel # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardKilderkin # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardLanternMk2 # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardLiquidator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardLoader # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardLyrae # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardManta # Manta Ship Entry
-  - ShipyardMcCargo # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardMcDelivery # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardMjolnir
-  - ShipyardNightlight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardNook # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardPhoenix # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardPlacebo # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardProspector # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardPulsar # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardRetort # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardSkipper # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardStellaris # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardStringer # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardStronghold # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardSurveyor # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardSwan
-  - ShipyardTakeaway # MonolithShip
-  - ShipyardUniform
-  - ShipyardVagabond # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-
-# syndicate shipyard commented out due to not knowing what to replace it name wise with.
+# Coldlight Shipyard. Not done yet.
 #- type: guideEntry
-#  id: SyndicateShipyard
-#  name: guide-entry-syndicateshipyard
-#  text: "/ServerInfo/_WF/Guidebook/Shipyard/SyndicateShipyard.xml"
+#  id: ColdlightShipyard
+#  name: guide-entry-shipyard-coldlight
+#  text: "/ServerInfo/_WF/Guidebook/Shipyard/ColdlighShipyard.xml"
 #  priority: 7
 #  children:
 #  - ShipyardHunter # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 #  - ShipyardInfitrator # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
 
 - type: guideEntry
-  id: ExpedShipyard
-  name: guide-entry-expedshipyard
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard.xml"
-  priority: 7
-  children:
-  - ShipyardAegis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardAnchor # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardBehir
-  - ShipyardBrigand # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCharon # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardDove # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardDragonfly # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardKobold
-  - ShipyardPathfinder # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardScryer
-
-
-- type: guideEntry
-  id: MedShipyard
-  name: guide-entry-medshipyard
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard.xml"
-  priority: 7
-  children:
-  - ShipyardAkupara # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardApothecary # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardCaladrius # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardDruid # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardEagle # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardHammerhead
-  - ShipyardMedivac
-  - ShipyardSearchlight # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardSpirit # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardStasis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardTyne # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardVitalis # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-
-- type: guideEntry
   id: OutlawShipyard
-  name: guide-entry-outlawshipyard
+  name: guide-entry-shipyard-outlaw
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard.xml"
   priority: 7
   children:
-  - ShipyardDagger
-  - ShipyardLooter
   - ShipyardBocaskreeo
+  - ShipyardDagger
+  - ShipyardInfelix
+  - ShipyardLooter
+  - ShipyardPoppet
   - ShipyardVeliola
-
-- type: guideEntry
-  id: ScrapShipyard
-  name: guide-entry-scrapshipyard
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard.xml"
-  priority: 7
-  children:
-  - ShipyardMephit
-  - ShipyardConstruct # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardGeode # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardIcarus
-  - ShipyardRatrod
-  - ShipyardTide # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-
-- type: guideEntry
-  id: StaffShipyard
-  name: guide-entry-staffshipyard
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard.xml"
-  priority: 7
-  children:
-  - ShipyardBroom # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardHarbormaster # FrontierShip Resources/Prototypes/_NF/Guidebook/shipyard.yml
-  - ShipyardMoppet
-
 
 #  priorities of which folder if ship is in multiple shipyards
   # 1: civilian
@@ -186,7 +60,7 @@
 
 - type: guideEntry
   id: ShipyardBucklerV
-  name: guide-entry-shipyard-buckler
+  name: guide-entry-shipyard-buckler-vox
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard/Bucklervox.xml"
 
 - type: guideEntry
@@ -203,6 +77,11 @@
   id: ShipyardDioddef
   name: guide-entry-shipyard-dioddef
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Dioddef.xml"
+
+- type: guideEntry
+  id: ShipyardFelix
+  name: guide-entry-shipyard-felix
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Felix.xml"
 
 - type: guideEntry
   id: ShipyardGrandqueen
@@ -240,6 +119,11 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard/Icarus.xml"
 
 - type: guideEntry
+  id: ShipyardInfelix
+  name: guide-entry-shipyard-infelix
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Infelix.xml"
+
+- type: guideEntry
   id: ShipyardKite
   name: guide-entry-shipyard-kite
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard/Kite.xml"
@@ -263,7 +147,7 @@
   id: ShipyardManta
   name: guide-entry-shipyard-manta
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Manta.xml"
-  
+
 - type: guideEntry
   id: ShipyardMedivac
   name: guide-entry-shipyard-medivac
@@ -275,6 +159,11 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Mjolnir.xml"
 
 - type: guideEntry
+  id: ShipyardMoppet
+  name: guide-entry-shipyard-moppet
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Moppet.xml"
+
+- type: guideEntry
   id: ShipyardParma
   name: guide-entry-shipyard-parma
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard/Parma.xml"
@@ -283,6 +172,11 @@
   id: ShipyardPhalanx
   name: guide-entry-shipyard-phalanx
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CgpShipyard/Phalanx.xml"
+
+- type: guideEntry
+  id: ShipyardPoppet
+  name: guide-entry-shipyard-poppet
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Poppet.xml"
 
 - type: guideEntry
   id: ShipyardPridwen
@@ -320,16 +214,31 @@
   text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Swan.xml"
 
 - type: guideEntry
-  id: ShipyardMoppet
-  name: guide-entry-shipyard-moppet
-  text: "/ServerInfo/_WF/Guidebook/Shipyard/StaffShipyard/Moppet.xml"
-
-- type: guideEntry
   id: ShipyardKobold
   name: guide-entry-shipyard-kobold
   text: "/ServerInfo/_WF/Guidebook/Shipyard/ExpedShipyard/Kobold.xml"
 
 - type: guideEntry
+  id: ShipyardVelios
+  name: guide-entry-shipyard-velios
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/MedShipyard/Velios.xml"
+
+- type: guideEntry
   id: ShipyardVeliola
   name: guide-entry-shipyard-veliola
   text: "/ServerInfo/_WF/Guidebook/Shipyard/OutlawShipyard/Veliola.xml"
+
+- type: guideEntry
+  id: ShipyardFatbears
+  name: guide-entry-shipyard-fatbears
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Fatbears.xml"
+
+- type: guideEntry
+  id: ShipyardZipper
+  name: guide-entry-shipyard-zipper
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/ScrapShipyard/Zipper.xml"
+
+- type: guideEntry
+  id: ShipyardZenith
+  name: guide-entry-shipyard-zenith
+  text: "/ServerInfo/_WF/Guidebook/Shipyard/CivShipyard/Zenith.xml"

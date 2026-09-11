@@ -1,15 +1,25 @@
+# Author Info
+# GitHub: ???
+# Discord: ???
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes:
+#
 #- type: vessel
 #  id: Wasp
 #  parent: BaseVessel
 #  name: NSF Wasp
 #  description: A large expedition oriented ship for holding prisoners and making them work planetside.
- # price: 135000
- # category: Large
- # group: Security
- # access: Bailiff
- ## shuttlePath: /Maps/_NF/Shuttles/Nfsd/wasp.yml
- # guidebookPage: Null
- # class:
+#  price: 135000
+#  category: Large
+#  group: Security
+#  access: Bailiff
+#  shuttlePath: /Maps/_NF/Shuttles/Nfsd/wasp.yml
+#  guidebookPage: ShipyardWasp
+#  class:
 #  - Capital
 #  - Detainment
 #  - Expedition

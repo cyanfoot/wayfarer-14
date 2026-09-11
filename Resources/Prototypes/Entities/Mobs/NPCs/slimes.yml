@@ -1,7 +1,7 @@
 - type: entity
   name: basic slime
   id: BaseMobAdultSlimes
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, MobNightVision ]
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
@@ -147,7 +147,7 @@
     - SimpleNeutral
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+      task: SimpleHostileCompound
 
 - type: entity
   name: blue slime

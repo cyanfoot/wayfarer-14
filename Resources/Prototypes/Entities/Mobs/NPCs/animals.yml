@@ -1,6 +1,6 @@
 - type: entity
   name: bat
-  parent: [SimpleMobBase, FlyingMobBase, MobCombat]
+  parent: [SimpleMobBase, FlyingMobBase, MobCombat, MobNightVision]
   id: MobBat
   description: Some cultures find them terrifying, others crunchy on the teeth.
   components:
@@ -149,7 +149,7 @@
         - Passive
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: ZombieImmune
     - type: Destructible
       thresholds:
@@ -179,7 +179,7 @@
     - type: MobMover
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -344,7 +344,7 @@
 
 - type: entity # TODO: figure out how to make these guys gib when stepped on
   name: cockroach
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, MobNightVision]
   id: MobCockroach
   description: This station is just crawling with bugs.
   components:
@@ -1207,7 +1207,7 @@
     - Passive
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+      task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
         true
@@ -1310,7 +1310,7 @@
         - Passive
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
 
 - type: entity
   name: boxing kangaroo
@@ -1423,7 +1423,7 @@
         - Monkey # Frontier
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: IdExaminable
     - type: Tag
       tags:
@@ -1701,7 +1701,7 @@
 
 - type: entity
   name: mouse
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, MobNightVision]
   id: MobMouse
   description: Squeak!
   components:
@@ -2351,7 +2351,7 @@
   - type: MobMover
   - type: HTN
     rootTask:
-      task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+      task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -2413,7 +2413,6 @@
       behaviors:
       - !type:ExplodeBehavior
 
-
 - type: entity
   name: snake
   parent: SimpleMobBase
@@ -2464,7 +2463,7 @@
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
 - type: entity
-  parent: [SimpleMobBase, MobCombat]
+  parent: [SimpleMobBase, MobCombat, MobNightVision]
   id: MobSpiderBase
   abstract: true
   components:
@@ -2563,7 +2562,7 @@
     - type: MobMover
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: GhostRole
       makeSentient: true
       name: ghost-role-information-giant-spider-name
@@ -2986,7 +2985,7 @@
     - type: MobMover
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -3129,7 +3128,7 @@
     # DeltaV: get cats to fight with mice
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: NpcFactionMember
       factions:
         - Cat
@@ -3413,7 +3412,7 @@
 
 - type: entity
   name: hamster
-  parent: [SimpleMobBase, MobCombat, StripableInventoryBase]
+  parent: [SimpleMobBase, MobCombat, StripableInventoryBase, MobNightVision]
   id: MobHamster
   description: A cute, fluffy, robust hamster.
   components:
@@ -3778,7 +3777,7 @@
         - Passive
     - type: HTN
       rootTask:
-        task: N14HostileCompound # Wayfarer: SimpleHostileCompound:<N14HostileCompound
+        task: SimpleHostileCompound
     - type: Puller
       needsHands: false
 

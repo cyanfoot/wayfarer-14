@@ -132,7 +132,7 @@
           radius: 0.35
         density: 25
         mask:
-        - SmallMobMask
+        - MobMask
         layer:
         - SmallMobLayer # Allows small snakes to pass under the tables
   - type: Sprite
@@ -178,7 +178,7 @@
   components:
   - type: HTN
     rootTask:
-      task: N14RangedHostileCompound
+      task: SimpleRangedHostileCompound
   - type: Fixtures
     fixtures:
       fix1:

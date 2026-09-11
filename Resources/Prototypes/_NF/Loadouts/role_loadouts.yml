@@ -22,6 +22,7 @@
   - ContractorImplanter
   - ContractorBackpackItems
   - ContractorHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
 
 - type: roleLoadout
@@ -47,6 +48,7 @@
   - ContractorImplanter
   - ContractorBackpackItems
   - ContractorHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
 
 - type: roleLoadout
@@ -72,6 +74,7 @@
   - ContractorImplanter
   - ContractorBackpackItems
   - ContractorHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
 
 # region Frontier
@@ -96,6 +99,7 @@
 #  - ContractorImplanter
 #  - ContractorBackpackItems
 #  - ContractorHandItems
+#  - ContractorSupportPets
 #  - NFSpeciesSpecific
 #  - WFSidearm #Wayfarer
 #  - WFLongarm #Wayfarer
@@ -121,6 +125,7 @@
 #  - ContractorImplanter
 #  - ContractorBackpackItems
 #  - ContractorHandItems
+#  - ContractorSupportPets
 #  - NFSpeciesSpecific
 #  - WFSidearm #Wayfarer
 #  - WFLongarm #Wayfarer
@@ -146,6 +151,7 @@
 #  - ContractorImplanter
 #  - ContractorBackpackItems
 #  - ContractorHandItems
+#  - ContractorSupportPets
 #  - NFSpeciesSpecific
 #  - WFSidearm #Wayfarer
 #  - WFLongarm #Wayfarer
@@ -173,6 +179,7 @@
 #  - ContractorImplanter
 #  - ContractorBackpackItems
 #  - ContractorHandItems
+#  - ContractorSupportPets
 #  - NFSpeciesSpecific
 #  - WFSidearm #Wayfarer
 #  - WFLongarm #Wayfarer
@@ -201,6 +208,7 @@
 #  - ContractorImplanter
 #  - StationRepBackpackItems
 #  - ContractorHandItems
+#  - ContractorSupportPets
 #  - NFSpeciesSpecific
 #  - WFSidearm #Wayfarer
 #  - WFLongarm #Wayfarer
@@ -227,6 +235,7 @@
   - ContractorEncryptionKey
   - ContractorBackpackItems
   - ContractorHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
 
 # region Misc

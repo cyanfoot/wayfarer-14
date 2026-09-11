@@ -1,14 +1,24 @@
+# Author Info
+# GitHub: ???
+# Discord: ???
+
+# Maintainer Info
+# GitHub: ???
+# Discord: ???
+
+# Shuttle Notes:
+#
 #- type: vessel
 #  id: Empress
 #  parent: BaseVessel
 #  name: NSF Empress
-#  description: A large patrol vessel capable of carrying up to 4 smaller faster attack ships. The flagship vessel of the CGP.
+#  description: A large patrol vessel capable of carrying up to 4 smaller faster attack ships. The flagship vessel of the NFSD.
 #  price: 170000 #Appraisal value is 150000
 #  category: Large
 #  group: Security
 #  access: Bailiff
 #  shuttlePath: /Maps/_NF/Shuttles/Nfsd/empress.yml
-#  guidebookPage: Null
+#  guidebookPage: ShipyardEmpress
 #  class:
 #  - Capital
 #  engine:

@@ -18,6 +18,7 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -43,6 +44,7 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -67,6 +69,7 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -93,6 +96,7 @@
   - WFImplanter
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -120,6 +124,7 @@
   - WFImplanter
   - StationRepBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -149,6 +154,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -177,6 +183,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -204,6 +211,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NFSpeciesSpecific
   - WFSidearm
   - WFLongarm
@@ -233,6 +241,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -261,6 +270,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -289,6 +299,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -317,6 +328,7 @@
   - WFEncryptionKey
   - WFBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -345,6 +357,7 @@
   - WFEncryptionKey
   - SeniorOfficerBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -364,7 +377,7 @@
   - NfsdFace
   - NfsdGlasses
   - NfsdBelt
-  - NfsdEarsMaster
+  - SheriffEars
   - NfsdBoxSurvival
   - SeniorPeacekeeperPDA
   - WFWallet
@@ -373,6 +386,7 @@
   - WFEncryptionKey
   - SeniorOfficerBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
@@ -400,6 +414,7 @@
   - WFImplanter
   - SeniorOfficerBackpackItems
   - WFHandItems
+  - ContractorSupportPets
   - NfsdSpeciesSpecific
   - WFSidearmCGP
   - WFLongarm
