@@ -20,6 +20,7 @@
             StationTrafficController: [ -1, -1 ]
 #            SecurityGuard: [ -1, -1 ]
             Valet: [ -1, -1 ]
+            StationStaff: [ -1, -1 ] #Wayfarer
             NFJanitor: [ -1, -1 ]
             MailCarrier: [ -1, -1 ]
             Sheriff: [ -1, -1]

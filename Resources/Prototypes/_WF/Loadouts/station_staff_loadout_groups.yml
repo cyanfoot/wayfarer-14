@@ -1,0 +1,16 @@
+- type: loadoutGroup
+  id: StationStaffJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - ValetClothingUniformJumpsuitValet
+  - ValetClothingUniformJumpskirtValet
+  - ChefJumpsuit
+  - ChefJumpskirt
+  - BartenderJumpsuit
+  - BartenderJumpskirt
+  - JanitorJumpsuit
+  - JanitorJumpskirt
+  subgroups:
+  - WFJumpsuit # Wayfarer
+  fallbacks:
+  - ValetClothingUniformJumpsuitValet

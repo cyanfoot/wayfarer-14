@@ -34,3 +34,18 @@
     shipWhitelist:
     - MooringBuoy
     - RaceBuoy
+
+- type: entity
+  parent: ShipVoucherFrontierJanitor
+  id: ShipVoucherStationStaff
+  name: station staff ship voucher
+  description: Allows for one free station staff ship purchase from the Staff Shipyard. Destroyed on sale.
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - state: vouchervalet
+  - type: ShipyardVoucher
+    access:
+    - Service
+

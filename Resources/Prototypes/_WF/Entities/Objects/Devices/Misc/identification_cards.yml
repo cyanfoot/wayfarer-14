@@ -33,3 +33,25 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: JobSelectBoundUserInterface
+
+- type: entity
+  parent: PassengerIDCard
+  id: StationStaffFlexibleJobIDCard
+  name: Station Staff Flexible Job ID Card
+  description: Staff are permitted to change their job title to reflect specialisms. Please do be professional - Management
+  components:
+  - type: PresetIdCard
+    job: StationStaff
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idintern-service
+  - type: AgentIDCard
+  - type: ActivatableUI
+    key: enum.AgentIDCardUiKey.Key
+    inHandsOnly: true
+    verbText: job-select-card-open-ui-verb
+  - type: UserInterface
+    interfaces:
+      enum.AgentIDCardUiKey.Key:
+        type: JobSelectBoundUserInterface
