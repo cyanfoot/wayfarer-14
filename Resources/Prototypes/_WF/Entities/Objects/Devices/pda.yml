@@ -607,3 +607,22 @@
         pda-wantedoutlaw
   - type: Icon
     state: pda-wantedoutlaw
+
+- type: entity
+  parent: BasePDA
+  id: StationStaffPDA
+  name: station staff PDA
+  description: Smells of booze, spice, and spacecleaner. Houses a flexible ID card.
+  components:
+  - type: Pda
+    id: StationStaffFlexibleJobIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-valet
+  - type: PdaBorderColor
+    borderColor: "#860000"
+    accentVColor: "#F2F2F2"
+  - type: Icon
+    state: pda-valet

@@ -9,6 +9,7 @@
 #  - DirectorOfCare #WF moved to medical
   - StationTrafficController
   - Valet # nyano
+  - StationStaff #Wayfarer
   - NFJanitor
   - MailCarrier # nyano
 #  - SecurityGuard

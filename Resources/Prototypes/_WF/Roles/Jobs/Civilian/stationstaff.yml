@@ -1,0 +1,89 @@
+﻿- type: job
+  id: StationStaff
+  name: job-name-station-staff
+  description: job-description-station-staff
+  playTimeTracker: JobStationStaff
+  startingGear: StationStaffGear
+  alwaysUseSpawner: true
+  icon: "JobIconServiceWorker"
+  supervisors: job-supervisors-sr
+  weight: 60
+  displayWeight: 10
+  canBeAntag: false
+  access:
+  - Maintenance
+  - External
+  - Service
+  - Frontier
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  # Wayfarer
+  - !type:AddComponentSpecial
+    components:
+      - type: PreventShipyardTitleOverwrite
+  # End Wayfarer
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+- type: startingGear
+  id: StationStaffGear
+  equipment:
+    id: StationStaffPDA
+  storage:
+    back:
+    - ShipVoucherFrontierValet
+  encryptionKeys:
+  - EncryptionKeyGreeting
+  - EncryptionKeyService
+
+- type: chameleonOutfit
+  id: StationStaffChameleonOutfit
+  job: StationStaff
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBellhop
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterVestValet
+    gloves: ClothingHandsGlovesColorWhite
+
+# play time tracker
+- type: playTimeTracker
+  id: JobStationStaff
+
+- type: entity
+  id: SpawnPointStationStaff
+  parent: SpawnPointPassenger
+  name: station staff spawn point
+  components:
+  - type: SpawnPoint
+    job_id: StationStaff
+
+- type: roleLoadout
+  id: JobStationStaff
+  groups:
+  - StationStaffJumpsuit
+  - WFOuterClothing
+  - ContractorForcedOuterClothing
+  - WFBackpack
+  - WFShoes
+  - WFHead
+  - WFEars
+  - WFGloves
+  - WFGlasses
+  - WFFace
+  - WFBelt
+  - WFNeck
+  - WFEncryptionKey
+  - WFBoxSurvival
+  - WFWallet
+  - WFCartridge
+  - WFImplanter
+  - WFBackpackItems
+  - WFHandItems
+  - ContractorSupportPets
+  - NFSpeciesSpecific
+  - WFSidearm
+  - WFLongarm
+  - WFAmmo

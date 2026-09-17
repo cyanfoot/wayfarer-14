@@ -10,3 +10,6 @@ job-description-wayfarer-interview =  Work underneath your new Captain as they g
 
 job-name-inactive = Inactive
 job-description-inactive = Someone who is currently experiencing the effects of Space Sleep Disorder
+
+job-name-station-staff = Station Staff
+job-description-station-staff = Keep Dusk and Calypso clean, and their guests entertained and fed
