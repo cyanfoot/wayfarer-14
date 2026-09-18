@@ -33,7 +33,7 @@
     id: StationStaffPDA
   storage:
     back:
-    - ShipVoucherFrontierValet
+    - ShipVoucherStationStaff
   encryptionKeys:
   - EncryptionKeyGreeting
   - EncryptionKeyService
