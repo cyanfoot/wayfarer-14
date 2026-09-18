@@ -47,5 +47,5 @@
     - state: vouchervalet
   - type: ShipyardVoucher
     access:
-    - Service
-
+    - Service #The Chauffer, to allows staff to be Valets.
+    - Janitor
