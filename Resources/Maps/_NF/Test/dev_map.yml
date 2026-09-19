@@ -12410,7 +12410,7 @@ entities:
       parent: 2
 - proto: SpawnPointStationStaff
   entities:
-  - uid: 1907
+  - uid: 1909
     components:
     - type: Transform
       pos: -3.5,2.5
