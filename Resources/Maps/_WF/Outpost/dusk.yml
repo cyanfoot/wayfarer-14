@@ -28799,7 +28799,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.4449039,-71.954865
       parent: 2
-- proto: BaseComputer
+- proto: BaseComputerLibrary
   entities:
   - uid: 2222
     components:
