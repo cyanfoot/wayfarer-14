@@ -102417,8 +102417,6 @@ entities:
       pos: 20.5,-3.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 95
     - type: AtmosPipeLayers
