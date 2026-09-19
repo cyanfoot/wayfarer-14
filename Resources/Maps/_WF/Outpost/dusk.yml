@@ -64660,8 +64660,7 @@ entities:
       pos: -2.5,-68.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2519.046
-      state: Closing
+      state: Open
   - uid: 9150
     components:
     - type: Transform
