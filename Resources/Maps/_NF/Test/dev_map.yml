@@ -12408,4 +12408,11 @@ entities:
     - type: Transform
       pos: -0.11783123,4.753312
       parent: 2
+- proto: SpawnPointStationStaff
+  entities:
+  - uid: 1907
+    components:
+    - type: Transform
+      pos: -3.5,2.5
+      parent: 2
 ...
