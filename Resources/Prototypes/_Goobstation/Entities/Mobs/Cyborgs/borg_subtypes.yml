@@ -219,11 +219,11 @@
   spritePath: _Goobstation/Mobs/Silicon/Service/standart.rsi
   dummyPrototype: BorgChassisServiceStandart
 
-- type: borgSubtype
-  parentBorgType: service
-  id: service_brobot
-  spritePath: _Goobstation/Mobs/Silicon/Service/standart.rsi
-  dummyPrototype: BorgChassisServiceBrobot
+# - type: borgSubtype             #Seems to be a duplicate.
+#   parentBorgType: service
+#   id: service_brobot
+#   spritePath: _Goobstation/Mobs/Silicon/Service/standart.rsi
+#   dummyPrototype: BorgChassisServiceBrobot
 
 - type: borgSubtype
   parentBorgType: service
