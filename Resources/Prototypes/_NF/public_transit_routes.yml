@@ -11,9 +11,9 @@
   liveryColor: "#aa4444"
 
 - type: publicTransitRoute
-  id: CalypsoExpress
+  id: CalypsoExpress # Wayfarer TradeExpress<CalypsoExpress
   routeNumber: 2
-  dockTag: DockTransitCalypsoExpress
+  dockTag: DockTransitCalypsoExpress # Wayfarer DockTransitTradeExpress<DockTransitCalypsoExpress
   busVessels:
   - Cheetah
   - Cheetah
