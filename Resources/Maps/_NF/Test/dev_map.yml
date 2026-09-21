@@ -12408,6 +12408,7 @@ entities:
     - type: Transform
       pos: -0.11783123,4.753312
       parent: 2
+# Start Wayfarer
 - proto: SpawnPointStationStaff
   entities:
   - uid: 1909
@@ -12415,4 +12416,5 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 2
+# End Wayfarer
 ...
