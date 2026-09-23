@@ -13,6 +13,9 @@ trait-claybody-desc = Your body is made of living clay. Others can pluck pieces 
 trait-mime-name = Mime
 trait-mime-desc = You have taken the mime's vow of silence.
 
+trait-IPCBioreactor-name = Bio-Reactor
+trait-IPCBioreactor-desc = You have an Internal Bio-reactor, that lets you generate power from food and drink.
+
 loadout-trait-restriction = Requires the { $trait } trait.
 
 ## Juggling system
