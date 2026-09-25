@@ -115,8 +115,13 @@
     removeEmpty: true
     groups:
     - id: Food
+      skipEffects: true
     - id: Drink
+      skipEffects: true
+    - id: Drink
+      skipEffects: true
     - id: Alcohol
+      skipEffects: true
     - id: Medicine
       skipEffects: true
     - id: Narcotic

@@ -151,7 +151,7 @@ public partial class SharedBodySystem
 
         foreach (var slotId in part.Organs.Keys)
         {
-            if (InsertOrgan(partId, organId, slotId, part, organ))
+            if (InsertOrgan(partId, organId, slotId, part, organ)) //Wayfarer - changed to test
                 return true;
         }
 
