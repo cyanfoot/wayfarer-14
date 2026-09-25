@@ -60,7 +60,7 @@
   - type: Organ
   - type: Metabolizer
     maxReagents: 2
-    metabolizerTypes: [Human]
+    metabolizerTypes: [IPC]
     groups: []
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
   # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
@@ -111,12 +111,15 @@
   - type: Metabolizer
     # mm yummy
     maxReagents: 3
-    metabolizerTypes: [Human]
+    metabolizerTypes: [Human, IPC]
     removeEmpty: true
-    groups:
+    groups:     #Skips everything except IPCFuel (which is on a few base chems that make sense)
     - id: Food
+      skipEffects: true
     - id: Drink
+      skipEffects: true
     - id: Alcohol
+      skipEffects: true
     - id: Medicine
       skipEffects: true
     - id: Narcotic
@@ -125,5 +128,6 @@
       skipEffects: true
     - id: Poison
       skipEffects: true
+    - id: IPCFuel
 
 

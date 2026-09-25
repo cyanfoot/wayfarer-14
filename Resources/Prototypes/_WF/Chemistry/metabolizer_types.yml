@@ -1,3 +1,7 @@
- - type: metabolizerType
-   id: AurelianVox
-   name: metabolizer-type-aurelianvox
+- type: metabolizerType
+  id: AurelianVox
+  name: metabolizer-type-aurelianvox
+
+- type: metabolizerType
+  id: IPC
+  name: metabolizer-type-ipc

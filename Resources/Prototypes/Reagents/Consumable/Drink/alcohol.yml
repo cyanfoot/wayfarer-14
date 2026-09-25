@@ -217,6 +217,13 @@
           damage:
             types:
               Radiation: -0.05
+    IPCFuel:
+      effects:
+      - !type:RechargeSiliconBattery
+        percent: 0.05
+        conditions:
+        - !type:OrganType
+          type: IPC
 
 - type: reagent
   id: Gin

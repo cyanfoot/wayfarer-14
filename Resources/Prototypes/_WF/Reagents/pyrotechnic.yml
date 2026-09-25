@@ -24,3 +24,7 @@
             Poison: 1
       - !type:FlammableReaction
         multiplier: 0.4
+    IPCFuel:
+      effects:
+      - !type:RechargeSiliconBattery
+        percent: 0.05

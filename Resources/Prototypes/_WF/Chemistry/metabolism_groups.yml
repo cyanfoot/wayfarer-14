@@ -1,0 +1,4 @@
+#Wayfarer: Custom metabolism groups for IPCs with their bio-generator stomachs.
+- type: metabolismGroup
+  id: IPCFuel
+  name: "IPC Fuel"
