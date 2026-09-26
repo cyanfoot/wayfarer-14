@@ -1,0 +1,4 @@
+- type: flavor
+  id: nutrientpaste
+  flavorType: Complex
+  description: "slightly better than starvation"

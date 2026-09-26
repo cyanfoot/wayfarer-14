@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "nutrient paste made by stickycheZ101, veggie and meat uses palette from rimworld meat paste and veggie paste and sprited by AL using references from thaslop",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+    {
+      "name": "nutrientpaste"
+    },
+    {
+      "name": "veggiepaste"
+    },
+    {
+      "name": "meatpaste"
+    }
+    ]
+}
+

@@ -1,0 +1,52 @@
+- type: entity
+  name: Locust Flavour Nutrient Paste
+  parent: FoodMealBase
+  id: FoodNutrientPaste
+  description: A synthetic mixture of protein, carbohydrates, and vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - nutrientpaste
+    - type: Food
+      trash:
+        - FoodPacketMRETrash
+    - type: Sprite
+      sprite: _WF/Objects/Consumable/Food/nutrientpaste.rsi
+      layers:
+        - state: nutrientpaste
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 30
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 20
+    - type: Tag
+      tags:
+        - Meat
+
+- type: entity
+  name: Vegeteable Flavour Nutrient Paste Meal
+  parent: FoodThaSlop
+  id: FoodVeggieThaSlop
+  description: A synthetic mixture of plant-based protein, carbohydrates, vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
+  components:
+    - type: Tag
+      tags:
+      - Vegetable
+    - type: Sprite
+      layers:
+        - state: veggiepaste
+
+- type: entity
+  name: Meat Flavour Nutrient Paste Meal
+  parent: FoodThaSlop
+  id: FoodMeatThaSlop
+  description: A synthetic mixture of animal-based protein, carbohydrates, vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
+  components:
+    - type: Tag
+      tags:
+      - Meat
+    - type: Sprite
+      layers:
+        - state: meatpaste
