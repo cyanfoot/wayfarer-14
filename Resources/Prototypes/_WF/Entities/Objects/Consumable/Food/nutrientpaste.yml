@@ -27,8 +27,8 @@
 
 - type: entity
   name: Vegeteable Flavour Nutrient Paste Meal
-  parent: FoodThaSlop
-  id: FoodVeggieThaSlop
+  parent: FoodNutrientPaste
+  id: FoodVeggieNutrientPaste
   description: A synthetic mixture of plant-based protein, carbohydrates, vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
   components:
     - type: Tag
@@ -40,8 +40,8 @@
 
 - type: entity
   name: Meat Flavour Nutrient Paste Meal
-  parent: FoodThaSlop
-  id: FoodMeatThaSlop
+  parent: FoodNutrientPaste
+  id: FoodMeatNutrientPaste
   description: A synthetic mixture of animal-based protein, carbohydrates, vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
   components:
     - type: Tag

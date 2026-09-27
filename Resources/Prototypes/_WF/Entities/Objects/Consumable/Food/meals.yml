@@ -123,8 +123,8 @@
   description: A Vox favourite, traditionally baked on the annivesary of an Arkship's launch.
   components:
   - type: Sprite
-    sprite: _Mono/Objects/Consumable/Food/Baked/misc.rsi
-    state: biscuit-simple
+    sprite: _WF/Objects/Consumable/Food/bakedgoods.rsi
+    state: launchbiscuit
   - type: Tag
     tags: 
     - SimpleBiscuit
@@ -137,9 +137,3 @@
           Quantity: 5
         - ReagentId: Flavorol
           Quantity: 2
-        - ReagentId: Dylovene
-          Quantity: 2
-  - type: FlavorProfile
-    flavors:
-    - meaty
-    - potatoes
