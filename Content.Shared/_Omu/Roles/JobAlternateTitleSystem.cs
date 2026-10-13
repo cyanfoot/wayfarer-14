@@ -2,7 +2,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Omu.Common.CCVar;
+using Content.Shared._Omu.CCVar;
 using Content.Shared.Dataset;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;

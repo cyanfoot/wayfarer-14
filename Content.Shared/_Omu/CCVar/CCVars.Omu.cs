@@ -1,6 +1,6 @@
 using Robust.Shared.Configuration;
 
-namespace Content.Omu.Common.CCVar;
+namespace Content.Shared._Omu.CCVar;
 
 [CVarDefs]
 public sealed partial class OmuCVars

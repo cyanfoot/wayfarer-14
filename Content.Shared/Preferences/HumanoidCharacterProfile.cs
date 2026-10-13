@@ -209,7 +209,7 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts)
             : this(other.Name, other.FlavorText, other.Species, other.Customspeciesname, other.Age, other.Sex, other.Gender, other.BankBalance, other.Appearance, other.SpawnPriority,
-                jobPriorities, other.PreferenceUnavailable, antagPreferences, traitPreferences, loadouts)
+                jobPriorities, new Dictionary<ProtoId<JobPrototype>, string>(other.JobAlternateTitles), other.PreferenceUnavailable, antagPreferences, traitPreferences, loadouts)
         {
         }
 
