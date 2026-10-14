@@ -8,9 +8,9 @@ job-name-alt-janitor-4 = Sanitation Specialist
 job-name-alt-mailcarrier-1 = Courier
 job-name-alt-mailcarrier-2 = Dispatch Runner
 job-name-alt-mailcarrier-3 = Delivery Associate
-job-name-alt-mailcarrier-4 = Postman
-job-name-alt-mailcarrier-5 = Postwoman
-job-name-alt-mailcarrier-6 = Postal Worker
+job-name-alt-mailcarrier-4 = Postal Worker
+job-name-alt-mailcarrier-5 = Harbinger
+job-name-alt-mailcarrier-6 = Messenger
 
 job-name-alt-stationstaff-1 = Dusk Staff
 job-name-alt-stationstaff-2 = Service Worker
@@ -50,6 +50,9 @@ job-name-alt-wayfarer-25 = McMerc
 
 job-name-alt-masteratarms-1 = Warden
 job-name-alt-masteratarms-2 = Bailiff
+job-name-alt-masteratarms-3 = Chief Ranger
+job-name-alt-masteratarms-4 = Wing Commander
+
 
 job-name-alt-internalaffairsagent-1 = Detective
 job-name-alt-internalaffairsagent-2 = Public Affairs Liaison
@@ -58,12 +61,19 @@ job-name-alt-internalaffairsagent-3 = Forensic Investigator
 job-name-alt-brigmedic-1 = Combat Medic
 job-name-alt-brigmedic-2 = Field Medic
 job-name-alt-brigmedic-3 = Brigmedic
+job-name-alt-brigmedic-4 = Battle Surgeon
 
 job-name-alt-seniorpeacekeeper-1 = Sergeant
 job-name-alt-seniorpeacekeeper-2 = Dispatcher
+job-name-alt-seniorpeacekeeper-3 = Specialist
+job-name-alt-seniorpeacekeeper-4 = Senior Ranger
+job-name-alt-seniorpeacekeeper-5 = Flight Commander
 
 job-name-alt-peacekeeper-1 = Station Security
 job-name-alt-peacekeeper-2 = Prison Guard
+job-name-alt-peacekeeper-3 = Combat Technician
+job-name-alt-peacekeeper-4 = Ranger
+job-name-alt-peacekeeper-5 = Flight Officer
 
 job-name-alt-emergencyresponder-1 = Surgeon
 job-name-alt-emergencyresponder-2 = Nurse

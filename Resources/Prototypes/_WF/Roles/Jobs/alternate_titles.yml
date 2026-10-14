@@ -28,7 +28,7 @@
   id: AlternateTitlesBailiff
   values:
     prefix: job-name-alt-masteratarms-
-    count: 2
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesNFDetective
@@ -40,19 +40,19 @@
   id: AlternateTitlesBrigmedic
   values:
     prefix: job-name-alt-brigmedic-
-    count: 3
+    count: 4
 
 - type: localizedDataset
   id: AlternateTitlesSergeant
   values:
     prefix: job-name-alt-seniorpeacekeeper-
-    count: 2
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesDeputy
   values:
     prefix: job-name-alt-peacekeeper-
-    count: 2
+    count: 5
 
 - type: localizedDataset
   id: AlternateTitlesMedicalER
