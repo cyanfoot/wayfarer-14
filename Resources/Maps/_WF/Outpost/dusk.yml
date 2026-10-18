@@ -30444,9 +30444,6 @@ entities:
       pos: -3.5044243,-14.248124
       parent: 2
     - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: ActiveUserInterface
   - uid: 2502
     components:
