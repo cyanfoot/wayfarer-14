@@ -10,22 +10,43 @@ workflow:
 yaml_linter:
   stage: lint
   image: mcr.microsoft.com/dotnet/sdk:9.0
+  interruptible: true
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
+    NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+    DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "1"
+  cache:
+    key: "nuget-9.0"
+    paths:
+      - .nuget/packages
+    policy: pull-push
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends libfreetype6 libfontconfig1
+    - rm -rf /var/lib/apt/lists/*
   rules:
     - if: '$GITLAB_USER_LOGIN == "PJBot" || $GITLAB_USER_LOGIN == "web-flow"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - "**/*.yml"
+        - "**/*.yaml"
+        - "Content.YAMLLinter/**/*"
+        - "Directory.Packages.props"
+        - "global.json"
+        - "nuget.config"
     - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
-  before_script:
-    - git submodule sync --recursive
-    - git submodule update --init --recursive
-    - cd RobustToolbox
-    - git submodule update --init --recursive
-    - cd ..
+      changes:
+        - "**/*.yml"
+        - "**/*.yaml"
+        - "Content.YAMLLinter/**/*"
+        - "Directory.Packages.props"
+        - "global.json"
+        - "nuget.config"
   script:
-    - dotnet restore
-    - dotnet build --configuration Release --no-restore /p:WarningsAsErrors= /m
-    - dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build
+    - dotnet restore Content.YAMLLinter/Content.YAMLLinter.csproj
+    - dotnet build Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-restore /p:WarningsAsErrors= /m
+    - dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-build
