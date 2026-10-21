@@ -51,6 +51,37 @@ interruptible. Do not manually cancel a job during upload: the CDN uses a
 start/files/finish sequence. Avoid queuing obsolete releases; if several releases
 are queued, cancel unwanted **pending** jobs before they start.
 
+## Discord changelog publishing
+
+The included `.gitlab/ci/publish-changelog.yml` runs `publish_changelog` after
+`publish_cdn` succeeds, only for the same protected production release pipelines.
+Failures are non-blocking. Pushes, merge requests, and fork pipelines cannot send
+notifications. Jobs are serialized; avoid running obsolete releases out of order
+and cancel obsolete pending notification jobs along with their releases.
+
+Add these **masked, protected** CI/CD variables (type **Variable**, environment
+scope `production` or `*`):
+
+- `CHANGELOG_DISCORD_WEBHOOK`: the Discord webhook URL previously stored in
+  GitHub secrets. The job maps it to the script's `DISCORD_WEBHOOK_URL`.
+- `CHANGELOG_GITLAB_TOKEN`: a project access token with Reporter role and
+  `read_api` scope, or an equivalently authorized personal access token. It reads
+  project job history and historical repository files. `CI_JOB_TOKEN` cannot
+  list project jobs; no GitHub token or checkout PAT is needed.
+
+The script compares `Resources/Changelog/Wayfarer.yml` with the version from the
+previous successful `publish_changelog` job on the same ref, paginating history
+and skipping the current/newer jobs. With no history, the first successful run
+establishes a baseline **without sending old entries**. To send changes since a
+known release on the first run, temporarily set `CHANGELOG_BASE_SHA` to that
+commit SHA and remove it immediately afterward; leaving it set repeats entries.
+Missing historical files and API failures fail the notification job rather than
+replaying the entire changelog. Configure the webhook before the first run: a
+missing webhook intentionally skips sending and still establishes a baseline.
+
+Discord sends are not transactional: retrying after a partial send may repeat
+messages. No live Discord messages are sent by local validation.
+
 ## Changelogs and remaining GitHub workflows
 
 - RSS publishing remains optional and non-blocking. The RSS script still points
@@ -58,8 +89,7 @@ are queued, cancel unwanted **pending** jobs before they start.
   `Tools/actions_changelog_rss.py` for your infrastructure before adding
   `CHANGELOG_RSS_KEY` as a protected variable of type **Variable**. The script
   expects the key contents, not a GitLab File variable's path.
-- The old Discord changelog job is not invoked: its script queries the GitHub
-  Actions API for previous workflow runs and needs a separate GitLab migration.
+- Legacy GitHub callers can still use the Discord script's GitHub API path.
 - Other GitHub workflows, including staging/testing publication, are not migrated
   here. Disable their GitHub execution if GitHub publishing should stop entirely.
 

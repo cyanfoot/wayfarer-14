@@ -1,10 +1,14 @@
 include:
   - local: .gitlab/ci/publish.yml
+  - local: .gitlab/ci/validate-rsis.yml
+  - local: .gitlab/ci/validate-mapfiles.yml
+  - local: .gitlab/ci/publish-changelog.yml
 
 stages:
   - lint
   - test
   - deploy
+  - notify
 
 workflow:
   rules:

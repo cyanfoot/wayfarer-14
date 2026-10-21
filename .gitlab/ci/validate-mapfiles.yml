@@ -1,0 +1,21 @@
+validate_mapfiles:
+  stage: lint
+  image: python:3.10
+  interruptible: true
+  variables:
+    GIT_SUBMODULE_STRATEGY: normal
+    GIT_SUBMODULE_PATHS: RobustToolbox
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
+    PYTHONUNBUFFERED: "1"
+  rules:
+    - if: '$GITLAB_USER_LOGIN == "PJBot" || $GITLAB_USER_LOGIN == "web-flow"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
+      when: never
+    # Also covers merged-results and merge-train pipelines when enabled.
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+  before_script:
+    - python -m pip install yamale -r RobustToolbox/Schemas/mapfile_requirements.txt
+  script:
+    - python Tools/validate_mapfiles.py

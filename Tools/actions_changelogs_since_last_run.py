@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 """
-Sends updates to a Discord webhook for new changelog entries since the last GitHub Actions publish run.
+Sends new changelog entries to Discord since the last successful publishing job.
 
-Automatically figures out the last run and changelog contents with the GitHub API.
+Uses GitLab job history in GitLab CI, or the GitHub API in legacy workflows.
 """
 
 import itertools
 import os
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import quote
 
 import requests
 import yaml
@@ -39,6 +40,8 @@ def main():
         # to debug this script locally, you can use
         # a separate local file as the old changelog
         last_changelog_stream = DEBUG_CHANGELOG_FILE_OLD.read_text()
+    elif os.environ.get("GITLAB_CI") == "true":
+        last_changelog_stream = get_last_gitlab_changelog()
     else:
         # when running this normally in a GitHub actions workflow,
         # it will get the old changelog from the GitHub API
@@ -51,6 +54,56 @@ def main():
     diff = diff_changelog(last_changelog, cur_changelog)
     message_lines = changelog_entries_to_message_lines(diff)
     send_message_lines(message_lines)
+
+
+def get_last_gitlab_changelog() -> str:
+    """Find a previous successful notification, not merely a successful build."""
+    token = os.environ.get("CHANGELOG_GITLAB_TOKEN")
+    if not token:
+        raise RuntimeError("Configure CHANGELOG_GITLAB_TOKEN with read_api access")
+
+    api = os.environ["CI_API_V4_URL"].rstrip("/")
+    project = quote(os.environ["CI_PROJECT_ID"], safe="")
+    current_job = int(os.environ["CI_JOB_ID"])
+    job_name = os.environ["CI_JOB_NAME"]
+    ref = os.environ["CI_COMMIT_REF_NAME"]
+    base = f"{api}/projects/{project}"
+    session = requests.Session()
+    session.headers["PRIVATE-TOKEN"] = token
+
+    # Optional one-time baseline when moving from GitHub or recovering history.
+    last_sha = os.environ.get("CHANGELOG_BASE_SHA")
+    page = "1"
+    while not last_sha and page:
+        response = session.get(
+            f"{base}/jobs",
+            params={"scope[]": "success", "per_page": 100, "page": page},
+            timeout=30,
+        )
+        response.raise_for_status()
+        # GitLab returns jobs in descending ID order. Ignore newer/parallel jobs.
+        for job in response.json():
+            if (job["id"] < current_job and job["name"] == job_name
+                    and job["ref"] == ref and not job.get("tag", False)):
+                last_sha = job["commit"]["id"]
+                print(f"Last successful changelog job was {job['id']}: {last_sha}")
+                break
+        page = response.headers.get("X-Next-Page", "")
+
+    if not last_sha:
+        # Do not flood Discord with the entire repository history on migration.
+        print("No previous successful changelog job; establishing current baseline without sending history")
+        return Path(CHANGELOG_FILE).read_text(encoding="utf-8")
+
+    file_path = quote(CHANGELOG_FILE, safe="")
+    response = session.get(
+        f"{base}/repository/files/{file_path}/raw",
+        params={"ref": last_sha},
+        timeout=30,
+    )
+    # Fail closed on a missing/expired baseline rather than re-posting all history.
+    response.raise_for_status()
+    return response.text
 
 
 def get_most_recent_workflow(

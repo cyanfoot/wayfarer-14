@@ -1,0 +1,22 @@
+publish_changelog:
+  stage: notify
+  image: python:3.10
+  needs:
+    - job: publish_cdn
+      artifacts: false
+  resource_group: publish-changelog
+  interruptible: false
+  allow_failure: true
+  environment:
+    name: production
+    action: access
+  variables:
+    GIT_SUBMODULE_STRATEGY: none
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  rules:
+    - if: '$CI_PROJECT_PATH == "projectwayfarer/wayfarer14" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_COMMIT_REF_PROTECTED == "true" && ($CI_PIPELINE_SOURCE == "web" || $CI_PIPELINE_SOURCE == "schedule")'
+    - when: never
+  before_script:
+    - python -m pip install requests PyYAML
+  script:
+    - DISCORD_WEBHOOK_URL="$CHANGELOG_DISCORD_WEBHOOK" python Tools/actions_changelogs_since_last_run.py
