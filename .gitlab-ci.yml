@@ -1,0 +1,31 @@
+stages:
+  - lint
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+    - when: never
+
+yaml_linter:
+  stage: lint
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  rules:
+    - if: '$GITLAB_USER_LOGIN == "PJBot" || $GITLAB_USER_LOGIN == "web-flow"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+    - cd RobustToolbox
+    - git submodule update --init --recursive
+    - cd ..
+  script:
+    - dotnet restore
+    - dotnet build --configuration Release --no-restore /p:WarningsAsErrors= /m
+    - dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --no-build
