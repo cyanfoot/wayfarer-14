@@ -74,6 +74,9 @@ build_test_debug:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "stable")'
     - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
   before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends libfreetype6 libfontconfig1
+    - rm -rf /var/lib/apt/lists/*
     - git submodule sync --recursive
     - git submodule update --init --recursive
     - cd RobustToolbox
