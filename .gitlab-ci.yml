@@ -14,8 +14,18 @@ workflow:
   rules:
     - if: '($CI_PIPELINE_SOURCE == "web" || $CI_PIPELINE_SOURCE == "schedule") && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
     - when: never
+
+# Override included rules so both validators always gate eligible MR builds.
+validate_rsis:
+  rules: &merge_request_checks
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "stable")'
+    - when: never
+
+validate_mapfiles:
+  rules: *merge_request_checks
 
 yaml_linter:
   stage: lint
@@ -36,28 +46,7 @@ yaml_linter:
     - apt-get install -y --no-install-recommends libfreetype6 libfontconfig1
     - rm -rf /var/lib/apt/lists/*
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      changes:
-        - "**/*.yml"
-        - "**/*.yaml"
-        - "Content.YAMLLinter/**/*"
-        - "Directory.Packages.props"
-        - "global.json"
-        - "nuget.config"
-      when: manual
-      allow_failure: true
-    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
-      changes:
-        - "**/*.yml"
-        - "**/*.yaml"
-        - "Content.YAMLLinter/**/*"
-        - "Directory.Packages.props"
-        - "global.json"
-        - "nuget.config"
-      when: manual
-      allow_failure: true
+    - when: never
   script:
     - dotnet restore Content.YAMLLinter/Content.YAMLLinter.csproj
     - dotnet build Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-restore /p:WarningsAsErrors= /m
@@ -65,6 +54,11 @@ yaml_linter:
 
 build_test_debug:
   stage: test
+  needs:
+    - job: validate_rsis
+      artifacts: false
+    - job: validate_mapfiles
+      artifacts: false
   image: mcr.microsoft.com/dotnet/sdk:9.0
   interruptible: true
   variables:
@@ -77,11 +71,7 @@ build_test_debug:
     paths:
       - .nuget/packages
     policy: pull-push
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "stable")'
-    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+  rules: *merge_request_checks
   before_script:
     - apt-get update
     - apt-get install -y --no-install-recommends libfreetype6 libfontconfig1
