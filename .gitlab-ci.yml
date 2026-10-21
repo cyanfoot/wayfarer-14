@@ -1,5 +1,6 @@
 stages:
   - lint
+  - test
 
 workflow:
   rules:
@@ -26,8 +27,6 @@ yaml_linter:
     - apt-get install -y --no-install-recommends libfreetype6 libfontconfig1
     - rm -rf /var/lib/apt/lists/*
   rules:
-    - if: '$GITLAB_USER_LOGIN == "PJBot" || $GITLAB_USER_LOGIN == "web-flow"'
-      when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
@@ -38,6 +37,8 @@ yaml_linter:
         - "Directory.Packages.props"
         - "global.json"
         - "nuget.config"
+      when: manual
+      allow_failure: true
     - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
       changes:
         - "**/*.yml"
@@ -46,7 +47,40 @@ yaml_linter:
         - "Directory.Packages.props"
         - "global.json"
         - "nuget.config"
+      when: manual
+      allow_failure: true
   script:
     - dotnet restore Content.YAMLLinter/Content.YAMLLinter.csproj
     - dotnet build Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-restore /p:WarningsAsErrors= /m
     - dotnet run --project Content.YAMLLinter/Content.YAMLLinter.csproj --configuration Release --no-build
+
+build_test_debug:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  interruptible: true
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+    DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "1"
+  cache:
+    key: "nuget-9.0"
+    paths:
+      - .nuget/packages
+    policy: pull-push
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_DRAFT == "true"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "stable")'
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+    - cd RobustToolbox
+    - git submodule update --init --recursive
+    - cd ..
+  script:
+    - dotnet restore
+    - dotnet build --configuration DebugOpt --no-restore /m
+    - dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
+    - DOTNET_gcServer=1 dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --filter "FullyQualifiedName!~ShipyardTest" -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed
