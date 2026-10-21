@@ -1,0 +1,20 @@
+validate_rsis:
+  stage: lint
+  image: python:3.10
+  interruptible: true
+  variables:
+    # The validator and schema live in the engine submodule. Validate against
+    # the committed engine revision; GitHub's dependency-PR action has no role here.
+    GIT_SUBMODULE_STRATEGY: normal
+    GIT_SUBMODULE_PATHS: RobustToolbox
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  rules:
+    # Includes merged-results and merge-train pipelines when enabled in GitLab.
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - "**/*.rsi/**/*"
+    - if: '$CI_PIPELINE_SOURCE == "push" && ($CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "staging" || $CI_COMMIT_BRANCH == "stable")'
+  before_script:
+    - python -m pip install pillow jsonschema
+  script:
+    - python RobustToolbox/Schemas/validate_rsis.py Resources/
