@@ -49,7 +49,7 @@ deploy to `production` if the environment is protected.
 `resource_group: publish` serializes deployments, and publishing is not
 interruptible. Do not manually cancel a job during upload: the CDN uses a
 start/files/finish sequence. Avoid queuing obsolete releases; if several releases
-are queued, cancel unwanted **pending** jobs before they start.
+are queued, cancel unwanted **pending** jobs before they start. 
 
 ## Discord changelog publishing
 
