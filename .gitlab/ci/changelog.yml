@@ -1,0 +1,29 @@
+generate_changelog:
+  stage: notify
+  image: node:18
+  needs: []
+  resource_group: generate-changelog
+  interruptible: false
+  variables:
+    GIT_STRATEGY: clone
+    GIT_DEPTH: "20"
+    GIT_SUBMODULE_STRATEGY: none
+    CHANGELOG_DIR: Resources/Changelog/Wayfarer.yml
+  rules:
+    # Runs after an MR merges (push to the default branch). The bot's own commit is skipped via [skip ci].
+    - if: '$CI_PROJECT_PATH == "projectwayfarer/wayfarer14" && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - when: never
+  script:
+    - 'test -n "$CHANGELOG_GITLAB_TOKEN" || { echo "CHANGELOG_GITLAB_TOKEN (api + write_repository) must be configured."; exit 1; }'
+    - git config user.name "${CHANGELOG_USER:-Wayfarer Bot}"
+    - git config user.email "${CHANGELOG_EMAIL:-noreply@gitlab.com}"
+    - (cd Tools/_NF/changelog && npm install && node changelog.js)
+    - |
+      if git diff --quiet -- "$CHANGELOG_DIR"; then
+        echo "No changelog changes to commit"
+        exit 0
+      fi
+    - git add "$CHANGELOG_DIR"
+    - git commit -m "${CHANGELOG_MESSAGE:-Update Changelog} (${CI_COMMIT_SHORT_SHA}) [skip ci]"
+    - git pull --rebase "https://oauth2:${CHANGELOG_GITLAB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" "$CI_DEFAULT_BRANCH"
+    - git push "https://oauth2:${CHANGELOG_GITLAB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" "HEAD:${CI_DEFAULT_BRANCH}"

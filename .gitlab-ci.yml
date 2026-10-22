@@ -3,6 +3,7 @@ include:
   - local: .gitlab/ci/validate-rsis.yml
   - local: .gitlab/ci/validate-mapfiles.yml
   - local: .gitlab/ci/publish-changelog.yml
+  - local: .gitlab/ci/changelog.yml
 
 stages:
   - lint
@@ -14,6 +15,8 @@ workflow:
   rules:
     - if: '($CI_PIPELINE_SOURCE == "web" || $CI_PIPELINE_SOURCE == "schedule") && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    # Push pipelines on the default branch exist only for generate_changelog; all other jobs exclude push.
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - when: never
 
 # Override included rules so both validators always gate eligible MR builds.

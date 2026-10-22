@@ -3,8 +3,10 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 const axios = require("axios");
 
+const isGitLab = process.env.GITLAB_CI === "true";
+
 // Use GitHub token if available
-if (process.env.GITHUB_TOKEN) axios.defaults.headers.common["Authorization"] = `Bearer ${process.env.GITHUB_TOKEN}`;
+if (!isGitLab && process.env.GITHUB_TOKEN) axios.defaults.headers.common["Authorization"] = `Bearer ${process.env.GITHUB_TOKEN}`;
 
 // Check changelog directory.
 if (!process.env.CHANGELOG_DIR) {
@@ -19,14 +21,52 @@ const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9_\-, ]+)?/img; // :cl: or 🆑 [
 const EntryRegex = /^ *[*-]? *(add|remove|tweak|fix): *([^\n\r]+)\r?$/img; // * or - followed by change type [0] and change message [1]
 const CommentRegex = /<!--.*?-->/gs; // HTML comments
 
+// Fetch the merged PR/MR as { merged_at, body, author, url, number }
+async function getPullRequest() {
+    if (!isGitLab) {
+        const pr = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
+        return {
+            merged_at: pr.data.merged_at,
+            body: pr.data.body,
+            author: pr.data.user.login,
+            url: url,
+            number: process.env.PR_NUMBER,
+        };
+    }
+
+    // On GitLab this runs in a push pipeline on the default branch; find the MR that produced the pushed commit.
+    const token = process.env.CHANGELOG_GITLAB_TOKEN;
+    if (!token) throw new Error("Configure CHANGELOG_GITLAB_TOKEN with api and write_repository access");
+
+    const api = process.env.CI_API_V4_URL.replace(/\/+$/, "");
+    const res = await axios.get(
+        `${api}/projects/${encodeURIComponent(process.env.CI_PROJECT_ID)}/repository/commits/${process.env.CI_COMMIT_SHA}/merge_requests`,
+        { headers: { "PRIVATE-TOKEN": token } }
+    );
+    const mr = res.data.find((m) => m.state === "merged" && m.target_branch === process.env.CI_DEFAULT_BRANCH);
+    if (!mr) return null;
+
+    return {
+        merged_at: mr.merged_at,
+        body: mr.description || "",
+        author: mr.author.username,
+        url: mr.web_url,
+        number: mr.iid,
+    };
+}
+
 // Main function
 async function main() {
     // Get PR details
-    const pr = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
-    const { merged_at, body, user } = pr.data;
+    const pr = await getPullRequest();
+    if (!pr) {
+        console.log("No merged merge request found for this commit, skipping");
+        return;
+    }
+    const { merged_at, body, author: prAuthor, url, number } = pr;
 
     // Remove comments from the body
-    commentlessBody = body.replace(CommentRegex, '');
+    commentlessBody = (body || "").replace(CommentRegex, '');
 
     // Get author
     const headerMatch = HeaderRegex.exec(commentlessBody);
@@ -38,7 +78,7 @@ async function main() {
     let author = headerMatch[1];
     if (!author) {
         console.log("No author found, setting it to author of the PR\n");
-        author = user.login;
+        author = prAuthor;
     } else {
         author = author.trim()
     }
@@ -55,7 +95,8 @@ async function main() {
     let time = merged_at;
     if (time)
     {
-        time = time.replace("z", ".0000000+00:00").replace("Z", ".0000000+00:00");
+        // Drop any fractional seconds (GitLab includes them) and normalize the UTC suffix
+        time = time.replace(/(\.\d+)?[zZ]$/, ".0000000+00:00");
     }
     else
     {
@@ -70,13 +111,13 @@ async function main() {
         changes: entries,
         id: getHighestCLNumber() + 1,
         time: time,
-        url: `https://github.com/${process.env.GITHUB_REPOSITORY}/pull/${process.env.PR_NUMBER}`,
+        url: url,
     };
 
     // Write changelogs
     writeChangelog(entry);
 
-    console.log(`Changelog updated with changes from PR #${process.env.PR_NUMBER}`);
+    console.log(`Changelog updated with changes from PR #${number}`);
 }
 
 
