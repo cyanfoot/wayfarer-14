@@ -1,21 +1,27 @@
+- type: trait
+  id: HLRoboticVoice
+  name: hl-trait-robot-voice-name
+  description: hl-trait-robot-voice-desc
+  cost: 1
+  category: Voices
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: Speech
+      speechSounds: Pai
+      speechVerb: Robotic
+      allowedEmotes: ['Beep', 'Ping', 'Buzz', 'Buzz-Two', 'Chime', 'Honk']
+    - type: Vocal
+      sounds:
+        Male: UnisexSilicon
+        Female: UnisexSilicon
+        Unsexed: UnisexSilicon
+    - type: TypingIndicator
+      proto: robot
+    - type: Tag
+    tags:
+    - SiliconEmotes
 
-# - type: trait            Wayfarer: Not working properly.
-#   id: HLRoboticVoice
-#   name: hl-trait-robot-voice-name
-#   description: hl-trait-robot-voice-desc
-#   replaceComponents: true
-#   cost: 1
-#   category: Voices
-#   components:
-#   - type: Speech
-#     speechSounds: Pai
-#     speechVerb: Robotic
-#     allowedEmotes: ['Beep', 'Ping', 'Buzz', 'Buzz-Two', 'Chime', 'Honk']
-#   - type: Vocal
-#     sounds:
-#       Male: UnisexSilicon
-#       Female: UnisexSilicon
-#       Unsexed: UnisexSilicon
 
 - type: trait
   id: HLBorgVoice
