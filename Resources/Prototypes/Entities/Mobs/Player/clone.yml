@@ -74,6 +74,7 @@
   - NFSalvageMobRestrictions # Frontier
   - Carnivore # Wayfarer
   - Herbivore # Wayfarer
+  - Synthetic #Wayfarer
 
 # for job-specific traits etc.
 - type: cloningSettings
