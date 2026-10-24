@@ -19,8 +19,8 @@
     - type: TypingIndicator
       proto: robot
     - type: Tag
-    tags:
-    - SiliconEmotes
+      tags:
+      - RoboticVoiceEmotes
 
 
 - type: trait
@@ -43,6 +43,9 @@
         Unsexed: UnisexSilicon
     - type: TypingIndicator
       proto: robot
+    - type: Tag
+      tags:
+      - RoboticVoiceEmotes
 
 
 - type: trait
@@ -85,6 +88,9 @@
         Unsexed: UnisexSiliconSyndicate
     - type: TypingIndicator
       proto: robot
+    - type: Tag
+      tags:
+      - RoboticVoiceEmotes
 
 - type: trait
   id: HLVoiceXenoborg
@@ -106,6 +112,9 @@
         Male: UnisexSiliconSyndicate
         Female: UnisexSiliconSyndicate
         Unsexed: UnisexSiliconSyndicate
+    - type: Tag
+      tags:
+      - RoboticVoiceEmotes
     
 
 - type: trait
